@@ -12,13 +12,16 @@ import {
   Route
 } from "react-router-dom";
 
+import { createBrowserHistory } from "history";
+
+let history = createBrowserHistory()
 
 function App() {
   return (
     <div className="App">
       <Navigation />
 
-      <Router>
+      <Router history={history}>
         <Switch>
           <Route path='/:menuId'>
             <PreviewMenu />
