@@ -1,5 +1,4 @@
 import React from 'react'
-
 const PreviewRestaurantMenu = (props) => {
 
   const restaurantDetails = props.restaurantDetails
@@ -42,6 +41,10 @@ const PreviewRestaurantMenu = (props) => {
           
         })}  
     </div>
+    <br></br>
+    <br></br>
+    <br></br>
+    <p style={{textAlign: "center"}}>QR Menu Generated with   <a href='https://Grub.live'>Grub.live</a></p>
     </div>
   )
 
