@@ -13,7 +13,7 @@
 
 
 .preview-menu {
-  margin: $xxl $xxl*2;
+  margin: $xxl 10%;
 }
 
 .restaurant-logo {
@@ -44,6 +44,9 @@
     }
     margin: $l 0;
   }
+  .preview-menu {
+    margin: $xl 5%;
+  }
 
 }
 
@@ -53,15 +56,13 @@
       width: 12em;
     }
   }
+
 }
 
 @media only screen and (max-width: 400px) {
   .black-yellow {
     margin: $xs;
     padding: $xs $s;
-  }
-  .preview-menu {
-    display: none;
   }
   .edit-menu {
     width: 100%;
