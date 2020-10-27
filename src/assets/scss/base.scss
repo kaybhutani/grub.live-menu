@@ -1,0 +1,70 @@
+@font-face {
+  font-family: 'Lato';
+  src: local('Lato'), url('../fonts/Lato/Lato-Regular.ttf') format('truetype');
+}
+
+body {
+  font-family: Lato;
+  padding: 0;
+  margin: 0;
+  color: $dark-gray;
+}
+
+.logo {
+  width: 6em;
+}
+
+
+nav {
+
+  background-color: $yellow-base;
+  padding: $s $m;
+  .nav-item {
+    text-align: center;
+    vertical-align: middle;
+    
+  }
+  
+}
+
+.form-input {
+  
+  border-radius: $xs;
+  border: 1px solid $light-gray;
+  padding: $s;
+  width: 80%;
+
+}
+
+
+footer {
+  margin-top: $l;
+  padding: $m $m;
+  background-color: $dark-gray;
+  color: $yellow-base;
+
+  text-align: center;
+
+  .footer-item {
+    display: inline-block;
+    margin: $s;
+  }
+
+  .footer-links {
+    margin-top: $xl;
+  }
+}
+
+.container {
+  margin: $xxl $l;
+}
+
+
+@media only screen and (max-width: 400px) {
+  .logo { 
+    width: 4em;
+  }
+  .nav-item {
+    display: block;
+  }
+}

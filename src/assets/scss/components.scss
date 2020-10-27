@@ -1,0 +1,75 @@
+
+
+.shadow-box {
+  padding: $l $l $xxl $l;
+  border-radius: $xs;
+  box-shadow: $xxs $xs $m -$xs rgba(0,0,0,0.20);
+  margin-bottom: $l;
+}
+
+.eos-icons {
+  vertical-align: middle;
+}
+
+
+.preview-menu {
+  margin: $xxl $xxl*2;
+}
+
+.restaurant-logo {
+  width: 1.8em;
+  vertical-align: middle;
+  margin-right: $s;
+ }
+
+ .delete-icon {
+   color: $light-gray;
+   cursor: pointer;
+   &:hover {
+     color: red;
+   }
+ }
+
+
+@media only screen and (max-width: 700px) {
+  
+  .header {
+    .header-features {
+      display: block;
+      width: 100%;
+    }
+    .intro-img {
+      width: 15em;
+      margin: $l 0;
+    }
+    margin: $l 0;
+  }
+
+}
+
+@media only screen and (max-width: 500px) {
+  .header {
+    .intro-img {
+      width: 12em;
+    }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .black-yellow {
+    margin: $xs;
+    padding: $xs $s;
+  }
+  .preview-menu {
+    display: none;
+  }
+  .edit-menu {
+    width: 100%;
+  }
+
+  .header {
+    .intro-img {
+      width: 10em;
+    }
+  }
+}
