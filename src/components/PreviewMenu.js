@@ -3,6 +3,7 @@ import PreviewRestaurantMenu from './PreviewRestaurantMenu'
 import {apiBaseUrl} from '../config.json'
 
 import {useParams} from 'react-router-dom'
+import loadingIcon from '../assets/images/three_dots_loading.svg'
 
 
 
@@ -38,7 +39,11 @@ const PreviewMenu = (props) => {
       </div>
       )
       :
-      (<p style={{textAlign: "center", marginBottom: '40%'}}>Loading...</p>)}
+      (
+      <div style={{textAlign: "center", marginBottom: '40%'}}>
+        <img alt='' className='loading-icon' src={loadingIcon} />
+      </div>)
+      }
     </div>
 
 

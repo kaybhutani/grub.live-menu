@@ -1,7 +1,7 @@
 import React from 'react'
 
 import './assets/scss/index.scss'
-
+import '../node_modules/eos-icons/dist/css/eos-icons.css'
 
 import Navigation from './components/Navigation'
 import PreviewMenu from './components/PreviewMenu'
