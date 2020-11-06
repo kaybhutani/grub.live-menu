@@ -4,8 +4,11 @@ import QrReader from 'react-qr-scanner'
 const Home = () => {
   const scanHandler = (data) => {
     
-    if(data!=null && data.includes('glqr.me')) {
-      window.location.href = data
+    if(data!=null) {
+      if(data.includes('glqr.me'))
+        window.location.href = data
+      else
+        alert(`That doesn't look a QR code we generated!`)
     }
   }
   return (
