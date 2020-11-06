@@ -4,6 +4,7 @@ import {apiBaseUrl} from '../config.json'
 
 import {useParams} from 'react-router-dom'
 import loadingIcon from '../assets/images/three_dots_loading.svg'
+import Home from './Home'
 
 
 
@@ -35,7 +36,13 @@ const PreviewMenu = (props) => {
             <PreviewRestaurantMenu restaurantDetails={restaurantDetails} />
           </div>)
         :
-          (<h1 style={{textAlign: "center", marginBottom: '40%'}}>Incorrect QR Code</h1>)}
+          (
+            <div style={{textAlign: "center", marginBottom: '40%'}}>
+              <h1 >Incorrect QR Code</h1>
+              <p>Looks like that is not a valid QR code, try sanning again...</p>
+              <Home />
+            </div>
+          )}
       </div>
       )
       :

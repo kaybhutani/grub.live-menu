@@ -10,7 +10,7 @@ const Home = () => {
   }
   return (
     <div className='container' style={{textAlign: "center"}}>
-      <h1>Scan QR Code</h1>
+      {/* <h1>Scan QR Code</h1> */}
       <br></br>
       <QrReader
           style={{width: '80%', margin: 'auto'}}
