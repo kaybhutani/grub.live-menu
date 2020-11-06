@@ -3,6 +3,7 @@ import React from 'react'
 import './assets/scss/index.scss'
 import '../node_modules/eos-icons/dist/css/eos-icons.css'
 
+import Home from './components/Home'
 import Navigation from './components/Navigation'
 import PreviewMenu from './components/PreviewMenu'
 import Footer from './components/Footer'
@@ -13,6 +14,7 @@ import {
 } from "react-router-dom"
 
 
+
 function App() {
 
   return (
@@ -21,7 +23,9 @@ function App() {
 
       <HashRouter>
         <Switch>
-          <Route path='/:menuId'>
+        <Route exact path='/' children={ <Home /> }/>
+
+          <Route exact path='/:menuId'>
             <PreviewMenu />
           </Route>
         </Switch>
