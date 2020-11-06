@@ -15,7 +15,7 @@ const Home = () => {
       <QrReader
           style={{width: '80%', margin: 'auto'}}
           
-          facingMode = 'front'
+          facingMode = 'rear'
           onError = {(error) => console.log(error)}
           onScan = {(data) => scanHandler(data)}
           />
