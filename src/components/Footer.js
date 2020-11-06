@@ -10,10 +10,9 @@ const Footer = () => {
           <div>Rejuvenating the dining experience.</div>
         </div>
         <div className='footer-links'>
-          <div className='footer-item hyperlink-invert'>Contact Us</div>
-          <div className='footer-item hyperlink-invert'>How it works</div>
-          <div className='footer-item hyperlink-invert'>Feedback</div>
-          <div className='footer-item hyperlink-invert'>About Us</div>
+          <a href='https://grub.live/#/contact' className='hyperlink-invert'>Contact Us</a>
+          <a href='https://grub.live/#/how-it-works ' className='hyperlink-invert'>How it works</a>
+          <a href='https://grub.live/#/about' className='hyperlink-invert'>About Us</a>
         </div>
         <br></br>
         <br></br>

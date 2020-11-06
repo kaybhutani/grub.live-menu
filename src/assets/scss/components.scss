@@ -1,4 +1,11 @@
-
+.hyperlink-invert {
+  color: $yellow-base;
+  text-decoration: none;
+  margin: $s;
+  &:hover {
+    text-decoration: underline;
+  }
+}
 
 .shadow-box {
   padding: $l $l $xxl $l;
