@@ -7,6 +7,28 @@
   }
 }
 
+.black-yellow {
+  color: $dark-gray;
+  border: $xs/2 solid $dark-gray;
+  border-radius: $xs;
+  font-size: 1em;
+  padding: $s $m;
+  margin: $s;
+  background-color: transparent;
+
+
+  &:hover {
+    color: $yellow-base;
+    background-color: $dark-gray;
+    transition-duration: 0.2s;
+    cursor: pointer;
+  }
+  &:focus {
+      outline: none;
+  }
+
+}
+
 .shadow-box {
   padding: $l $l $xxl $l;
   border-radius: $xs;
