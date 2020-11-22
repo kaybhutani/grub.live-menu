@@ -1,7 +1,36 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+
 const PreviewRestaurantMenu = (props) => {
 
-  const restaurantDetails = props.restaurantDetails
+  const [restaurantDetails, setRestaruarntDetails] = useState(props.restaurantDetails)
+  const [searchQuery, setSearchQuery] = useState("")
+  useEffect(()=> {
+
+    if(searchQuery==="") 
+      setRestaruarntDetails(props.restaurantDetails)
+    else {
+      // changing state obj to json
+      const tempRestaurantDetails = JSON.parse(JSON.stringify(props.restaurantDetails))
+      console.log(tempRestaurantDetails)
+      tempRestaurantDetails.menu.categories.forEach(category => {
+        
+        const tempItems = []
+
+        for(let i =0; i<category.items.length; i++) {
+          if(category.items[i].itemName.toLowerCase().includes(searchQuery.toLowerCase().trim()))
+            tempItems.push(category.items[i])
+        }
+        category.items = tempItems
+      });
+      
+      
+      setRestaruarntDetails(tempRestaurantDetails)
+    }
+  }, [props.restaurantDetails, searchQuery])
+
+  // const searchDish = (e) => {
+    
+  // }
 
   return (
     <div className='shadow-box'>
@@ -15,36 +44,48 @@ const PreviewRestaurantMenu = (props) => {
             {restaurantDetails.restaurantName}</h1>
         </div> 
     <br></br>
+    
+    <div style={{textAlign: "center"}}>
+      <input type='text' name='search-restaurant' className='form-input' placeholder='Search Menu' onKeyUp={e => setSearchQuery(e.target.value)} ></input>
+    </div>
+
+    <br></br>
     <div>
       {restaurantDetails.menu.categories.map((element, key) => {
-            return (
+            return element.title!== "" ?  (
             
             <div key={key}>
             <h2>{element.title}</h2>
             
 
             {
-              restaurantDetails.menu.categories[key].items.map((item, itemKey) => {
-                return (<div key={itemKey}>
-                  <p style={{display: "inline-block", margin: 0}}>{item.itemName}</p>
-                  <p style={{float: "right", margin: 0}}>{item.itemPrice}</p>
-                  <br></br>
-                  <br></br>  
-                </div>
-                
-                )
-              })
+              element.items.length >0 ?
+               (<div>
+                 {
+                restaurantDetails.menu.categories[key].items.map((item, itemKey) => {
+                  return (<div key={itemKey}>
+                    <p style={{display: "inline-block", margin: 0}}>{item.itemName}</p>
+                    <p style={{float: "right", margin: 0}}>{item.itemPrice}</p>
+                    <br></br>
+                    <br></br>  
+                  </div>
+                  
+                  )
+                })
+               }
+               </div>): 
+                (
+                  <div>
+                  <p>No items</p>
+                  </div>
+                  ) 
             }
             
           
-          </div>)
+          </div>):<div key={key}></div>
           
         })}  
     </div>
-    <br></br>
-    <br></br>
-    <br></br>
-    <p style={{textAlign: "center"}}>QR Menu Generated with   <a href='https://Grub.live'>Grub.live</a></p>
     </div>
   )
 
