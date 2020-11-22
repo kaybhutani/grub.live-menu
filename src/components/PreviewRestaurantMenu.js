@@ -11,19 +11,28 @@ const PreviewRestaurantMenu = (props) => {
     else {
       // changing state obj to json
       const tempRestaurantDetails = JSON.parse(JSON.stringify(props.restaurantDetails))
-      console.log(tempRestaurantDetails)
-      tempRestaurantDetails.menu.categories.forEach(category => {
-        
-        const tempItems = []
+      
+      const categories = []
 
-        for(let i =0; i<category.items.length; i++) {
-          if(category.items[i].itemName.toLowerCase().includes(searchQuery.toLowerCase().trim()))
-            tempItems.push(category.items[i])
+      tempRestaurantDetails.menu.categories.forEach(category => {
+
+        if(category.title.toLowerCase().includes(searchQuery.toLowerCase().trim())) {
+          categories.push(category)
         }
-        category.items = tempItems
+        else {
+          const tempItems = []
+          for(let i =0; i<category.items.length; i++) {
+            if(category.items[i].itemName.toLowerCase().includes(searchQuery.toLowerCase().trim()))
+              tempItems.push(category.items[i])
+          }
+          category.items = tempItems
+          if(tempItems.length>0)
+          {
+            categories.push(category)
+          }
+        }
       });
-      
-      
+      tempRestaurantDetails.menu.categories = categories
       setRestaruarntDetails(tempRestaurantDetails)
     }
   }, [props.restaurantDetails, searchQuery])
@@ -76,7 +85,7 @@ const PreviewRestaurantMenu = (props) => {
                </div>): 
                 (
                   <div>
-                  <p>No items</p>
+                    
                   </div>
                   ) 
             }
