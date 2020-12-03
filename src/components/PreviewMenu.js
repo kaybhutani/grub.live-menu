@@ -31,7 +31,7 @@ const PreviewMenu = (props) => {
         {restaurantDetails!=null
         ?
           (<div className='preview-menu'>
-            <PreviewRestaurantMenu restaurantDetails={restaurantDetails} />
+            <PreviewRestaurantMenu restaurantDetails={restaurantDetails}  customizedMenu = {restaurantDetails.customizedMenu}/>
           </div>)
         :
           (

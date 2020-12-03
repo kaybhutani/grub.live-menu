@@ -1,0 +1,20 @@
+{
+  "Light": {
+    "color": "#000000",
+    "backgroundColor": "#ffffff",
+    "fontFamily": "lato"
+  },
+  
+  "Dark": {
+    "color": "#ffffff",
+    "backgroundColor": "#000000",
+    "fontFamily": "lato"
+  },
+  "Christmas": {
+    "color": "#db3d3d",
+    "backgroundColor": "#003301",
+    "backgroundImage": "url(\"https://res.cloudinary.com/kartikay/image/upload/v1606767929/christmasbg_x98khj.svg\")",
+    "fontFamily": "TypewriterBold"
+  }
+
+}

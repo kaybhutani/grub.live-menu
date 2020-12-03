@@ -1,10 +1,24 @@
 import React, { useEffect, useState } from 'react'
+import themes from '../themes.json'
 
 const PreviewRestaurantMenu = (props) => {
 
   const [restaurantDetails, setRestaruarntDetails] = useState(props.restaurantDetails)
   const [searchQuery, setSearchQuery] = useState("")
+  const customizedMenu = props.customizedMenu
+  const [theme, setTheme] = useState(themes.Light)
   useEffect(()=> {
+    if(customizedMenu) {
+      if(restaurantDetails.menu.theme) {
+        if(themes[restaurantDetails.menu.theme.themeName])
+          setTheme(themes[restaurantDetails.menu.theme.themeName])
+        else {
+          console.log('No theme name found. Reading theme info')
+          setTheme(restaurantDetails.menu.theme)
+        }
+      }
+   
+    }
 
     if(searchQuery==="") 
       setRestaruarntDetails(props.restaurantDetails)
@@ -35,14 +49,21 @@ const PreviewRestaurantMenu = (props) => {
       tempRestaurantDetails.menu.categories = categories
       setRestaruarntDetails(tempRestaurantDetails)
     }
-  }, [props.restaurantDetails, searchQuery])
+  }, [props.restaurantDetails, restaurantDetails, searchQuery, customizedMenu])
 
   // const searchDish = (e) => {
     
   // }
 
   return (
-    <div className='shadow-box'>
+    <div className='shadow-box' style={
+      customizedMenu?
+      {
+       ...theme
+        
+        // backgroundColor: theme.backgroundColor
+      }:{}
+    }>
 
       <div  style={{textAlign: "center"}}>
           <h1>
@@ -51,6 +72,11 @@ const PreviewRestaurantMenu = (props) => {
             :
             (<i className='eos-icons' style={{color: 'red', fontSize: '1em', margin: '8px'}}>local_dining</i>)}   
             {restaurantDetails.restaurantName}</h1>
+            {
+              customizedMenu? 
+              <h4>{restaurantDetails.bio}</h4>
+              : <></>
+            }
         </div> 
     <br></br>
     
@@ -72,12 +98,22 @@ const PreviewRestaurantMenu = (props) => {
                (<div>
                  {
                 restaurantDetails.menu.categories[key].items.map((item, itemKey) => {
-                  return (<div key={itemKey}>
-                    <p style={{display: "inline-block", margin: 0}}>{item.itemName}</p>
-                    <p style={{float: "right", margin: 0}}>{item.itemPrice}</p>
-                    <br></br>
-                    <br></br>  
-                  </div>
+                  return (
+                    <div className='menu-item' key={itemKey}>
+                      <p className='item-name'>{item.itemName}</p>
+                      <p className='item-price'>{item.itemPrice}</p>
+                      {
+                        customizedMenu && item.itemDescription?
+                        <>
+                          <br></br>
+                          <i className='item-description'>{item.itemDescription}</i> 
+                        </>
+                        :
+                        <></>
+                      }
+                      <br></br>
+                      <br></br>  
+                    </div>
                   
                   )
                 })
@@ -95,6 +131,10 @@ const PreviewRestaurantMenu = (props) => {
           
         })}  
     </div>
+    <br></br>
+    <br></br>
+    <br></br>
+    <p style={{textAlign: 'center', margin: "50px 0px 0px 0px"}}>Menu created with <a style={{ color: 'inherit'}} href='www.grub.live'>www.grub.live</a></p>
     </div>
   )
 

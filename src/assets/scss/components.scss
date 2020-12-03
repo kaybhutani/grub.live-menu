@@ -51,6 +51,27 @@
   margin: $xxl 10%;
 }
 
+.menu-item {
+
+  .item-name {
+    display: inline-block;
+    margin: 0;
+    font-weight: 500;
+    font-size: 1.1em;
+  }
+
+  .item-price {
+    float: right;
+    margin: 0;
+  }
+
+  .item-description {
+    font-size: small;
+    word-wrap: break-word;
+  }
+ }
+
+
 .restaurant-logo {
   width: 1.8em;
   vertical-align: middle;
