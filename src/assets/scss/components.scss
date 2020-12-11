@@ -28,7 +28,7 @@
 }
 
 .shadow-box {
-  padding: $l $l $xxl $l;
+  padding: $l $m $xxl $m;
   border-radius: $xs;
   box-shadow: $xxs $xs $m -$xs rgba(0, 0, 0, 0.2);
   margin-bottom: $l;
@@ -45,17 +45,19 @@
 }
 
 .preview-menu {
-  margin: $xxl 10%;
+  // margin: $xxl 10%;
 }
 
 .menu-item {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   display: grid;
   grid-template-columns: 1fr 0.75fr;
   grid-template-areas:
     "md sd"
     "hr hr";
   .item-name {
+    margin-top: 0;
+    margin-bottom: 0;
     grid-area: md;
   }
 
@@ -63,6 +65,7 @@
     margin-top: 2px;
     text-align: right;
     grid-area: sd;
+    margin-bottom: 0;
   }
 
   .item-description {
@@ -71,6 +74,8 @@
 }
 @media (max-width: 450px) {
   .menu-item {
+    margin-bottom: 20px;
+    margin-top: 10px;
     grid-template-areas:
       "md md"
       "hr hr"
@@ -111,7 +116,7 @@
     margin: $l 0;
   }
   .preview-menu {
-    margin: $m $s;
+    // margin: $m $s;
   }
 }
 
