@@ -16,7 +16,6 @@
   margin: $s;
   background-color: transparent;
 
-
   &:hover {
     color: $yellow-base;
     background-color: $dark-gray;
@@ -24,15 +23,14 @@
     cursor: pointer;
   }
   &:focus {
-      outline: none;
+    outline: none;
   }
-
 }
 
 .shadow-box {
   padding: $l $l $xxl $l;
   border-radius: $xs;
-  box-shadow: $xxs $xs $m -$xs rgba(0,0,0,0.20);
+  box-shadow: $xxs $xs $m -$xs rgba(0, 0, 0, 0.2);
   margin-bottom: $l;
 }
 
@@ -46,48 +44,61 @@
   vertical-align: middle;
 }
 
-
 .preview-menu {
   margin: $xxl 10%;
 }
 
 .menu-item {
-
+  margin-bottom: 10px;
+  display: grid;
+  grid-template-columns: 1fr 0.75fr;
+  grid-template-areas:
+    "md sd"
+    "hr hr";
   .item-name {
-    display: inline-block;
-    margin: 0;
-    font-weight: 500;
-    font-size: 1.1em;
+    grid-area: md;
   }
 
   .item-price {
-    float: right;
-    margin: 0;
+    margin-top: 2px;
+    text-align: right;
+    grid-area: sd;
   }
 
   .item-description {
-    font-size: small;
-    word-wrap: break-word;
+    grid-area: hr;
   }
- }
-
+}
+@media (max-width: 450px) {
+  .menu-item {
+    grid-template-areas:
+      "md md"
+      "hr hr"
+      "sd sd";
+    .item-name {
+      margin-bottom: 5px;
+    }
+    .item-description {
+      opacity: 0.7;
+    }
+  }
+}
 
 .restaurant-logo {
   width: 1.8em;
   vertical-align: middle;
   margin-right: $s;
- }
+}
 
- .delete-icon {
-   color: $light-gray;
-   cursor: pointer;
-   &:hover {
-     color: red;
-   }
- }
+.delete-icon {
+  color: $light-gray;
+  cursor: pointer;
+  &:hover {
+    color: red;
+  }
+}
 
 @media only screen and (max-width: 700px) {
-  
   .header {
     .header-features {
       display: block;
@@ -102,7 +113,6 @@
   .preview-menu {
     margin: $m $s;
   }
-
 }
 
 @media only screen and (max-width: 500px) {
