@@ -113,7 +113,7 @@ const PreviewRestaurantMenu = (props) => {
           return element.title !== "" ? (
             <div key={key}>
               <h2>{element.title}</h2>
-
+              <hr />
               {element.items.length > 0 ? (
                 <div>
                   {restaurantDetails.menu.categories[key].items.map(
@@ -122,9 +122,7 @@ const PreviewRestaurantMenu = (props) => {
                     }
                   )}
                 </div>
-              ) : (
-                <div></div>
-              )}
+              ) : null}
             </div>
           ) : (
             <div key={key}></div>
