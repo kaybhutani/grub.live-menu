@@ -113,7 +113,7 @@ const PreviewRestaurantMenu = (props) => {
           return element.title !== "" ? (
             <div key={key}>
               <h2>{element.title}</h2>
-              <hr />
+              <hr style={customizedMenu ? { borderColor: theme.color } : {}} />
               {element.items.length > 0 ? (
                 <div>
                   {restaurantDetails.menu.categories[key].items.map(
