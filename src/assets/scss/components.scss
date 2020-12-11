@@ -44,9 +44,9 @@
   vertical-align: middle;
 }
 
-.preview-menu {
-  // margin: $xxl 10%;
-}
+// .preview-menu {
+//   // margin: $xxl 10%;
+// }
 
 .menu-item {
   margin-bottom: 20px;
@@ -70,10 +70,13 @@
 
   .item-description {
     grid-area: hr;
+    opacity: 0.7;
+    font-size: 0.9em;
   }
 }
+
 @media (max-width: 450px) {
-  .menu-item {
+  .menu-item {  
     margin-bottom: 20px;
     margin-top: 10px;
     grid-template-areas:
@@ -85,12 +88,15 @@
     }
     .item-description {
       opacity: 0.7;
+      font-size: 0.9em;
+      max-width: 300px;
     }
   }
 }
 
 .restaurant-logo {
-  width: 1.8em;
+  height: $l*3;
+  max-width: 500px;
   vertical-align: middle;
   margin-right: $s;
 }
