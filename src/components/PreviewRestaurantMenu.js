@@ -9,6 +9,7 @@ const PreviewRestaurantMenu = (props) => {
   const [searchQuery, setSearchQuery] = useState("");
   const customizedMenu = props.customizedMenu;
   const [theme, setTheme] = useState(themes.Light);
+
   useEffect(() => {
     if (customizedMenu) {
       if (restaurantDetails.menu.theme) {
@@ -20,7 +21,9 @@ const PreviewRestaurantMenu = (props) => {
         }
       }
     }
+  }, [customizedMenu, restaurantDetails]);
 
+  useEffect(() => {
     if (searchQuery === "") setRestaruarntDetails(props.restaurantDetails);
     else {
       // changing state obj to json
@@ -56,7 +59,7 @@ const PreviewRestaurantMenu = (props) => {
       tempRestaurantDetails.menu.categories = categories;
       setRestaruarntDetails(tempRestaurantDetails);
     }
-  }, [props.restaurantDetails, restaurantDetails, searchQuery, customizedMenu]);
+  }, [searchQuery, props.restaurantDetails]);
 
   // const searchDish = (e) => {
 
