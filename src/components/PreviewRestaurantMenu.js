@@ -9,6 +9,7 @@ const PreviewRestaurantMenu = (props) => {
   const [searchQuery, setSearchQuery] = useState("");
   const customizedMenu = props.customizedMenu;
   const [theme, setTheme] = useState(themes.Light);
+
   useEffect(() => {
     if (customizedMenu) {
       if (restaurantDetails.menu.theme) {
@@ -20,7 +21,9 @@ const PreviewRestaurantMenu = (props) => {
         }
       }
     }
+  }, [customizedMenu, restaurantDetails]);
 
+  useEffect(() => {
     if (searchQuery === "") setRestaruarntDetails(props.restaurantDetails);
     else {
       // changing state obj to json
@@ -56,7 +59,7 @@ const PreviewRestaurantMenu = (props) => {
       tempRestaurantDetails.menu.categories = categories;
       setRestaruarntDetails(tempRestaurantDetails);
     }
-  }, [props.restaurantDetails, restaurantDetails, searchQuery, customizedMenu]);
+  }, [searchQuery, props.restaurantDetails]);
 
   // const searchDish = (e) => {
 
@@ -76,8 +79,7 @@ const PreviewRestaurantMenu = (props) => {
       }
     >
       <div style={{ textAlign: "center" }}>
-        <h1>
-          {restaurantDetails.logo ? (
+      {restaurantDetails.logo ? (
             <img
               src={restaurantDetails.logo}
               alt=""
@@ -91,6 +93,7 @@ const PreviewRestaurantMenu = (props) => {
               local_dining
             </i>
           )}
+        <h1>
           {restaurantDetails.restaurantName}
         </h1>
         {customizedMenu ? <h4>{restaurantDetails.bio}</h4> : <></>}
@@ -112,13 +115,15 @@ const PreviewRestaurantMenu = (props) => {
         {restaurantDetails.menu.categories.map((element, key) => {
           return element.title !== "" ? (
             <div key={key}>
+              <br></br>
               <h2>{element.title}</h2>
-              <hr style={customizedMenu ? { borderColor: theme.color } : {}} />
+              <hr style={customizedMenu ? { borderColor: theme.color, opacity: '0.8' } : {}} />
+              <br></br>
               {element.items.length > 0 ? (
                 <div>
                   {restaurantDetails.menu.categories[key].items.map(
                     (item, itemKey) => {
-                      return <MenuItem {...item} key={itemKey} />;
+                      return <MenuItem {...item} theme={theme} key={itemKey} />;
                     }
                   )}
                 </div>

@@ -1,10 +1,21 @@
 import React from "react";
 import propTypes from "prop-types";
-const MenuItem = ({ itemName, itemDescription, itemPrice, customStyling }) => {
+const MenuItem = ({ itemName, itemDescription, itemPrice, customStyling , theme}) => {
   return (
     <div className="menu-item">
-      <p className="item-name">{itemName}</p>
-      <p className="item-price">{itemPrice}</p>
+      <p className="item-name" 
+      style = {
+        {
+          WebkitTextStroke: `0.03em ${theme.color}`
+        }
+      }>{itemName}</p>
+      <p className="item-price" 
+        style = {
+          {
+            WebkitTextStroke: `0.03em ${theme.color}`
+          }
+        }
+      >{itemPrice}</p>
       {itemDescription ? (
         <i className="item-description">{itemDescription}</i>
       ) : null}
