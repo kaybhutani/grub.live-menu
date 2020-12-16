@@ -1,5 +1,5 @@
 import React from 'react'
-
+import TagManager from 'react-gtm-module'
 import './assets/scss/index.scss'
 import '../node_modules/eos-icons/dist/css/eos-icons.css'
 
@@ -12,6 +12,14 @@ import {
   Route,
   HashRouter
 } from "react-router-dom"
+import {GTM} from './config.json'
+
+const tagManagerArgs = {
+  gtmId: GTM
+}
+
+TagManager.initialize(tagManagerArgs)
+
 
 
 

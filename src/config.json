@@ -1,3 +1,4 @@
 {
-  "apiBaseUrl" : "https://grub-live-backend.herokuapp.com/"
+  "apiBaseUrl" : "https://grub-live-backend.herokuapp.com/",
+  "GTM": "G-7GJC96WB6V"
 }

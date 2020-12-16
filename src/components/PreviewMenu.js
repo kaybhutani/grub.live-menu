@@ -4,7 +4,7 @@ import {apiBaseUrl} from '../config.json'
 
 import {useParams} from 'react-router-dom'
 import loadingIcon from '../assets/images/three_dots_loading.svg'
-
+import { Helmet } from 'react-helmet'
 
 const PreviewMenu = (props) => {
   const [restaurantDetails, setRestaurantDetails] = useState(null)
@@ -30,9 +30,25 @@ const PreviewMenu = (props) => {
       <div>
         {restaurantDetails!=null
         ?
-          (<div className='preview-menu'>
-            <PreviewRestaurantMenu restaurantDetails={restaurantDetails}  customizedMenu = {restaurantDetails.customizedMenu}/>
-          </div>)
+          (
+            <>
+              <Helmet>
+                <title>{restaurantDetails.restaurantName} Menu</title>
+                <meta
+                name='description'
+                content={`${restaurantDetails.restaurantName} Digital menu. ${restaurantDetails.bio}`}
+                />
+                <meta
+                  name='keywords'
+                  content={`food, restaurant, ${restaurantDetails.restaurantName}`} 
+                />
+              </Helmet>
+              <div className='preview-menu'>
+                <PreviewRestaurantMenu restaurantDetails={restaurantDetails}  customizedMenu = {restaurantDetails.customizedMenu}/>
+              </div>
+            </>
+            
+          )
         :
           (
             <div style={{textAlign: "center", marginBottom: '40%'}}>
