@@ -1,21 +1,21 @@
 {
   "files": {
     "main.css": "/static/css/main.e2dc72cf.chunk.css",
-    "main.js": "/static/js/main.f6825676.chunk.js",
-    "main.js.map": "/static/js/main.f6825676.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.6c6d3c8a.js",
-    "runtime-main.js.map": "/static/js/runtime-main.6c6d3c8a.js.map",
+    "main.js": "/static/js/main.9773dc11.chunk.js",
+    "main.js.map": "/static/js/main.9773dc11.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.0713c61a.js",
+    "runtime-main.js.map": "/static/js/runtime-main.0713c61a.js.map",
     "static/css/2.82eb3584.chunk.css": "/static/css/2.82eb3584.chunk.css",
-    "static/js/2.10f178ae.chunk.js": "/static/js/2.10f178ae.chunk.js",
-    "static/js/2.10f178ae.chunk.js.map": "/static/js/2.10f178ae.chunk.js.map",
-    "static/js/3.fede5ff0.chunk.js": "/static/js/3.fede5ff0.chunk.js",
-    "static/js/3.fede5ff0.chunk.js.map": "/static/js/3.fede5ff0.chunk.js.map",
+    "static/js/2.05367262.chunk.js": "/static/js/2.05367262.chunk.js",
+    "static/js/2.05367262.chunk.js.map": "/static/js/2.05367262.chunk.js.map",
+    "static/js/3.74fc5713.chunk.js": "/static/js/3.74fc5713.chunk.js",
+    "static/js/3.74fc5713.chunk.js.map": "/static/js/3.74fc5713.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.fafd3d319f980c2388b4afaf2eaeffa3.js": "/precache-manifest.fafd3d319f980c2388b4afaf2eaeffa3.js",
+    "precache-manifest.60f530dd3ee319b11792c0623a554568.js": "/precache-manifest.60f530dd3ee319b11792c0623a554568.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.82eb3584.chunk.css.map": "/static/css/2.82eb3584.chunk.css.map",
     "static/css/main.e2dc72cf.chunk.css.map": "/static/css/main.e2dc72cf.chunk.css.map",
-    "static/js/2.10f178ae.chunk.js.LICENSE.txt": "/static/js/2.10f178ae.chunk.js.LICENSE.txt",
+    "static/js/2.05367262.chunk.js.LICENSE.txt": "/static/js/2.05367262.chunk.js.LICENSE.txt",
     "static/media/index.scss": "/static/media/yellosun.fcc660c0.ttf",
     "static/media/eos-icons.css": "/static/media/eos-icons.d2873f13.woff2",
     "static/media/grub.live-logo-yellow.svg": "/static/media/grub.live-logo-yellow.8cd86dd6.svg",
@@ -23,10 +23,10 @@
     "static/media/three_dots_loading.svg": "/static/media/three_dots_loading.4d1c15f3.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.6c6d3c8a.js",
+    "static/js/runtime-main.0713c61a.js",
     "static/css/2.82eb3584.chunk.css",
-    "static/js/2.10f178ae.chunk.js",
+    "static/js/2.05367262.chunk.js",
     "static/css/main.e2dc72cf.chunk.css",
-    "static/js/main.f6825676.chunk.js"
+    "static/js/main.9773dc11.chunk.js"
   ]
 }
