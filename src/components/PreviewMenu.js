@@ -40,8 +40,9 @@ const PreviewMenu = (props) => {
                 />
                 <meta
                   name='keywords'
-                  content={`food, restaurant, ${restaurantDetails.restaurantName}`} 
+                  content={`food, restaurant, ${restaurantDetails.restaurantName}`}
                 />
+
               </Helmet>
               <div className='preview-menu'>
                 <PreviewRestaurantMenu restaurantDetails={restaurantDetails}  customizedMenu = {restaurantDetails.customizedMenu}/>
