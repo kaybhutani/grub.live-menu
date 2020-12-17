@@ -9,7 +9,7 @@ const PreviewMenuWrapper = (props) =>  {
 
   return (
 
-    <div >
+    <div className='container'>
       <MenuWrapper restaurantDetails={restaurantDetails} customizedMenu = {customizedMenu}/>
     </div>
   )
