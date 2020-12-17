@@ -1,6 +1,6 @@
 import React from "react";
-import Instagram from "../assets/images/instagramLogo.svg";
-import Facebook from "../assets/images/facebook.svg";
+import Instagram from "../../../assets/images/instagramLogo.svg";
+import Facebook from "../../../assets/images/facebook.svg";
 const SocialIcons = ({ platform, link }) => {
   if (!platform) {
     throw new Error("Platform is required!");

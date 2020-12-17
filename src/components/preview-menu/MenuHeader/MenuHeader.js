@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "./MenuHeader.module.scss";
-import SocialIcon from "../../SocialIcons";
+import SocialIcon from "./SocialIcons";
 import SearchIcon from "../../../assets/images/searchIcon.svg";
 const MenuHeader = ({ image, name, socials, filterQuery }) => {
   let [searchQuery, setSearchQuery] = useState("");

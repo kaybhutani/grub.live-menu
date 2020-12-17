@@ -13,7 +13,7 @@ import { Switch, Route, HashRouter } from "react-router-dom";
 function App() {
   return (
     <div className="App">
-      <Navigation />
+      {/* <Navigation /> */}
 
       <HashRouter>
         <Switch>
