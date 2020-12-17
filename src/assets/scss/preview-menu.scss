@@ -4,3 +4,29 @@ p {
   margin: 0;
   padding: 0;
 }
+
+.category-table {
+  width: 100%;
+  td {
+    padding: $s 0;
+  }
+  
+}
+
+.menu-items {
+  margin-bottom: $xxl;
+  .menu-item {
+
+    .item-description {
+      opacity: 0.8;
+      font-size: 0.8em;
+      padding-top: $m;
+    }
+    .item-price {
+      margin-left: $m;
+    }
+    
+  }
+}
+
+

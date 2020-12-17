@@ -3,7 +3,7 @@ import propTypes from "prop-types";
 const MenuItem = ({ itemName, itemDescription, itemPrice, customStyling , theme}) => {
   return (
       <>
-        <tr style={{width: '100%'}}>
+        <tr className='menu-item'>
           <td>
             <p className="item-name" 
             style = {

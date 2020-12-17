@@ -9,7 +9,7 @@ const PreviewMenuWrapper = (props) => {
   const customizedMenu = props.customizedMenu;
 
   return (
-    <div>
+    <div className="container">
       <MenuHeader
         image={restaurantDetails.logo}
         name={restaurantDetails.restaurantName}

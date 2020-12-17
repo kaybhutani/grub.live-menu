@@ -10,18 +10,26 @@ const MenuWrapper = (props) => {
       {restaurantDetails.menu.categories.map((element, key) => {
         return element.title !== "" ? (
           <div key={key}>
-            <h4>{element.title}</h4>
-            
+            <h3 id={element.title.replace(' ', '-')}>
+              {element.title}
+            </h3>
+            <hr></hr>
             {element.items.length > 0 ? (
               <div className='menu-items'>
-                <table>
-                <tr>
-                  {restaurantDetails.menu.categories[key].items.map(
-                    (item, itemKey) => {
-                      return <MenuItem {...item} theme={restaurantDetails.menu.theme} key={itemKey} />;
-                    }
-                  )}
-                </tr>
+                <table className='category-table'>
+                {/* <tr style={{textAlign: 'left'}}>
+                  
+                  Use this later to specify head and QTY type( half, full, 500ml etc)
+                   <th></th>
+                  <th></th> 
+                 
+                </tr> */}
+                {restaurantDetails.menu.categories[key].items.map(
+                  (item, itemKey) => {
+                    return <MenuItem {...item} theme={restaurantDetails.menu.theme} key={itemKey} />;
+                  }
+                )}
+  
                 </table>
                 
               </div>
