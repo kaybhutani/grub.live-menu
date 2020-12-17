@@ -1,0 +1,48 @@
+.MenuHeader {
+  display: flex;
+  margin-bottom: 20px;
+  flex-direction: column;
+  color: #b9b9b9;
+  font-weight: 600;
+}
+
+.imgWrapper {
+  text-align: center;
+  img {
+    max-width: 70px;
+  }
+}
+.firstRow {
+  display: flex;
+  margin: 10px 0;
+  justify-content: space-between;
+  align-items: center;
+  span {
+    font-size: 14px;
+  }
+  .socialIcons {
+    display: flex;
+    align-items: center;
+    img {
+      margin-right: 8px;
+    }
+  }
+}
+
+.secondRow {
+  display: flex;
+
+  border-radius: 25px;
+  background-color: #eeeded;
+  border: 0;
+  padding: 10px;
+  color: #9e9e9e;
+  input {
+    flex-grow: 2;
+    border: 0;
+    background-color: transparent;
+  }
+  button {
+    border: 0;
+  }
+}
