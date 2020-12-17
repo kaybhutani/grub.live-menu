@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import PreviewRestaurantMenu from './PreviewRestaurantMenu'
 import {apiBaseUrl} from '../config.json'
 
@@ -10,18 +10,20 @@ const PreviewMenu = (props) => {
   const [restaurantDetails, setRestaurantDetails] = useState(null)
   const [dataFetched, setDataFetched] = useState(false)
   let { menuId } = useParams();
-  if(!dataFetched) {
+
+  useEffect(() => {
     fetch(`${apiBaseUrl}/view?q=${menuId}`)
         .then(response => response.json())
         .then(data => {
           setDataFetched(true)
           console.log(data)
-          if(data.success)
-            {
-              setRestaurantDetails(data.data)
-            }
+          if(data.success) {
+            setRestaurantDetails(data.data)
+          }
         });
-  }
+  }, [])
+
+  
   
 
   return (
