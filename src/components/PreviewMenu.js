@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import PreviewRestaurantMenu from './PreviewRestaurantMenu'
+import PreviewMenuWrapper from './preview-menu/PreviewMenuWrapper'
 import {apiBaseUrl} from '../config.json'
 
 import {useParams} from 'react-router-dom'
@@ -47,7 +48,8 @@ const PreviewMenu = (props) => {
 
               </Helmet>
               <div className='preview-menu'>
-                <PreviewRestaurantMenu restaurantDetails={restaurantDetails}  customizedMenu = {restaurantDetails.customizedMenu}/>
+                {/* <PreviewRestaurantMenu restaurantDetails={restaurantDetails}  customizedMenu = {restaurantDetails.customizedMenu}/> */}
+                <PreviewMenuWrapper restaurantDetails={restaurantDetails}  customizedMenu = {restaurantDetails.customizedMenu}/>
               </div>
             </>
             
