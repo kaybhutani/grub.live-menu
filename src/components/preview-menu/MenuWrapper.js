@@ -24,12 +24,13 @@ const MenuWrapper = (props) => {
                   <th></th> 
                  
                 </tr> */}
-                {restaurantDetails.menu.categories[key].items.map(
-                  (item, itemKey) => {
-                    return <MenuItem {...item} theme={restaurantDetails.menu.theme} key={itemKey} />;
-                  }
-                )}
-  
+                <tbody>
+                  {restaurantDetails.menu.categories[key].items.map(
+                    (item, itemKey) => {
+                      return <MenuItem {...item} theme={restaurantDetails.menu.theme} key={itemKey} />;
+                    }
+                  )}
+                </tbody>
                 </table>
                 
               </div>
