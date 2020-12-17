@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import themes from "../themes.json";
 import MenuItem from "./MenuItem";
-
+import MenuHeader from "./preview-menu/MenuHeader/MenuHeader";
 const PreviewRestaurantMenu = (props) => {
   const [restaurantDetails, setRestaruarntDetails] = useState(
     props.restaurantDetails
@@ -78,24 +78,32 @@ const PreviewRestaurantMenu = (props) => {
           : {}
       }
     >
+      <MenuHeader
+        image={restaurantDetails.logo}
+        name={restaurantDetails.restaurantName}
+        // For testing
+        socials={{
+          facebook: "https://facebook.com",
+          instagram: "https://instagram.com",
+        }}
+        filterQuery={(payload) => console.log(payload)}
+      />
       <div style={{ textAlign: "center" }}>
-      {restaurantDetails.logo ? (
-            <img
-              src={restaurantDetails.logo}
-              alt=""
-              className="restaurant-logo"
-            ></img>
-          ) : (
-            <i
-              className="eos-icons"
-              style={{ color: "red", fontSize: "1em", margin: "8px" }}
-            >
-              local_dining
-            </i>
-          )}
-        <h1>
-          {restaurantDetails.restaurantName}
-        </h1>
+        {restaurantDetails.logo ? (
+          <img
+            src={restaurantDetails.logo}
+            alt=""
+            className="restaurant-logo"
+          ></img>
+        ) : (
+          <i
+            className="eos-icons"
+            style={{ color: "red", fontSize: "1em", margin: "8px" }}
+          >
+            local_dining
+          </i>
+        )}
+        <h1>{restaurantDetails.restaurantName}</h1>
         {customizedMenu ? <h4>{restaurantDetails.bio}</h4> : <></>}
       </div>
       <br></br>
@@ -117,7 +125,13 @@ const PreviewRestaurantMenu = (props) => {
             <div key={key}>
               <br></br>
               <h2>{element.title}</h2>
-              <hr style={customizedMenu ? { borderColor: theme.color, opacity: '0.8' } : {}} />
+              <hr
+                style={
+                  customizedMenu
+                    ? { borderColor: theme.color, opacity: "0.8" }
+                    : {}
+                }
+              />
               <br></br>
               {element.items.length > 0 ? (
                 <div>
