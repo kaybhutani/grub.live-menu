@@ -2,25 +2,32 @@ import React, { useState, useEffect } from "react";
 import styles from "./MenuHeader.module.scss";
 import SocialIcon from "./SocialIcons";
 import SearchIcon from "../../../assets/images/searchIcon.svg";
-const MenuHeader = ({ image, name, socials, filterQuery }) => {
+const MenuHeader = (props) => {
+  const restaurantDetails = props.restaurantDetails
   let [searchQuery, setSearchQuery] = useState("");
+  const filterQuery = () => {
+    console.log('search called')
+  }
   useEffect(() => {
     filterQuery(searchQuery);
   }, [searchQuery, filterQuery]);
-  let socialIcons = [];
-  for (let social in socials) {
-    socialIcons.push(
-      <SocialIcon key={social} platform={social} link={socials[social]} />
-    );
+  
+  let socialIcons = []
+  if(restaurantDetails.social) {
+    for (let social in restaurantDetails.social) {
+      socialIcons.push(
+        <SocialIcon key={social} platform={social} link={restaurantDetails.social[social]} />
+      );
+    }
   }
   return (
     <div className={styles.MenuHeader}>
       <div className={styles.imgWrapper}>
-        <img src={image} alt="Logo" />
+        <img src={restaurantDetails.logo} alt="Logo" />
       </div>
 
       <div className={styles.firstRow}>
-        <span>{name}</span>
+        <span>{restaurantDetails.restaurantName}</span>
         <div className={styles.socialIcons}>{socialIcons}</div>
       </div>
       <div className={styles.secondRow}>

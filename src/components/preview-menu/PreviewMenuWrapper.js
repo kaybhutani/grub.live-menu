@@ -1,25 +1,16 @@
 // import all components here
 
-import React from "react";
+import React, { useState } from "react";
 import MenuWrapper from "./MenuWrapper";
 import MenuHeader from "./MenuHeader/MenuHeader";
 import MenuSectionModal from "./MenuSectionModal/MenuSectionModal";
 const PreviewMenuWrapper = (props) => {
-  const restaurantDetails = props.restaurantDetails;
+  const [restaurantDetails, setRestaurantDetails] = useState(props.restaurantDetails)
   const customizedMenu = props.customizedMenu;
 
   return (
     <div className="container">
-      <MenuHeader
-        image={restaurantDetails.logo}
-        name={restaurantDetails.restaurantName}
-        // For testing
-        socials={{
-          facebook: "https://facebook.com",
-          instagram: "https://instagram.com",
-        }}
-        filterQuery={(payload) => console.log(payload)}
-      />
+      <MenuHeader restaurantDetails={restaurantDetails}/>
       <MenuSectionModal />
       <MenuWrapper
         restaurantDetails={restaurantDetails}
