@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import themes from "../themes.json";
 import MenuItem from "./MenuItem";
-import MenuHeader from "./preview-menu/MenuHeader/MenuHeader";
+
 const PreviewRestaurantMenu = (props) => {
   const [restaurantDetails, setRestaruarntDetails] = useState(
     props.restaurantDetails
@@ -78,16 +78,6 @@ const PreviewRestaurantMenu = (props) => {
           : {}
       }
     >
-      <MenuHeader
-        image={restaurantDetails.logo}
-        name={restaurantDetails.restaurantName}
-        // For testing
-        socials={{
-          facebook: "https://facebook.com",
-          instagram: "https://instagram.com",
-        }}
-        filterQuery={(payload) => console.log(payload)}
-      />
       <div style={{ textAlign: "center" }}>
         {restaurantDetails.logo ? (
           <img

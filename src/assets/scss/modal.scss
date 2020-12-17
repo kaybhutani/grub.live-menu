@@ -1,0 +1,13 @@
+// This file consists of overwrite rules for react-popup module
+.popup-content {
+  border-radius: 25px;
+  width: 80%;
+  max-width: 500px;
+}
+
+#popup-2 {
+  position: fixed !important;
+  bottom: 60px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
