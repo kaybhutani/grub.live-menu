@@ -10,7 +10,9 @@ const MenuWrapper = (props) => {
       {restaurantDetails.menu.categories.map((element, key) => {
         return element.title !== "" ? (
           <div key={key}>
-            <h3>{element.title}</h3>
+            <h3 id={element.title.replace(' ', '-')}>
+              {element.title}
+            </h3>
             <hr></hr>
             {element.items.length > 0 ? (
               <div className='menu-items'>
