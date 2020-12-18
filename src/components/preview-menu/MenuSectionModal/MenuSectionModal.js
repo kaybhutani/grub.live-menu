@@ -12,7 +12,7 @@ export default (props) => {
   ));
   return (
     <Popup
-      trigger={<button className={styles.button}>Browse Menu</button>}
+      trigger={<button className={styles.button}>BROWSE MENU</button>}
       modal
       nested
     >
