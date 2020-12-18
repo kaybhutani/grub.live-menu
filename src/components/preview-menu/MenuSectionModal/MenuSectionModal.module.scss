@@ -13,6 +13,7 @@
 
   color: #808080;
   a {
+    cursor: pointer;
     text-decoration: none;
     color: inherit;
     div {
@@ -36,4 +37,5 @@
   left: 50%;
   transform: translate(-50%, 0);
   outline: none;
+  cursor: pointer;
 }
