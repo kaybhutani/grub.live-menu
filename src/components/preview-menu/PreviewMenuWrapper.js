@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import MenuWrapper from "./MenuWrapper";
 import MenuHeader from "./MenuHeader/MenuHeader";
 import MenuSectionModal from "./MenuSectionModal/MenuSectionModal";
+import Offers from './Offers/Offers';
 const PreviewMenuWrapper = (props) => {
   const [restaurantDetails, setRestaurantDetails] = useState(
     props.restaurantDetails
@@ -17,6 +18,7 @@ const PreviewMenuWrapper = (props) => {
           restaurantDetails={restaurantDetails}
           customizedMenu={customizedMenu}
         />
+
         <MenuSectionModal
           categories={restaurantDetails.menu.categories.map((item) => {
             return {
@@ -26,6 +28,7 @@ const PreviewMenuWrapper = (props) => {
           })}
         />
       </div>
+     <Offers offers={['offer1']}/>
     </div>
   );
 };
