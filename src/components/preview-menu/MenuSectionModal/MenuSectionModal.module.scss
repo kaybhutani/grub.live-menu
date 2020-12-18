@@ -17,9 +17,9 @@
     text-decoration: none;
     color: inherit;
     div {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: 15px auto 10px;
+      align-items: center;
     }
   }
 }
@@ -38,4 +38,11 @@
   transform: translate(-50%, 0);
   outline: none;
   cursor: pointer;
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  background-color: #e8aa00;
+  border-radius: 50%;
 }

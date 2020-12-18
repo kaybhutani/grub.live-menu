@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import MenuCategory from "./MenuCategory/MenuCategory";
 import MenuItem from "./MenuItem";
 const MenuWrapper = (props) => {
   const restaurantDetails = props.restaurantDetails;
@@ -8,38 +9,12 @@ const MenuWrapper = (props) => {
     <div>
       {restaurantDetails.menu.categories.map((element, key) => {
         return element.title !== "" ? (
-          <div key={key}>
-            <h3 id={element.title.trim().toLowerCase().split(" ").join("-")}>
-              {element.title}
-            </h3>
-            <hr></hr>
-            {element.items.length > 0 ? (
-              <div className="menu-items">
-                <table className="category-table">
-                  {/* <tr style={{textAlign: 'left'}}>
-                  
-                  Use this later to specify head and QTY type( half, full, 500ml etc)
-                   <th></th>
-                  <th></th> 
-                 
-                </tr> */}
-                  <tbody>
-                    {restaurantDetails.menu.categories[key].items.map(
-                      (item, itemKey) => {
-                        return (
-                          <MenuItem
-                            {...item}
-                            theme={restaurantDetails.menu.theme}
-                            key={itemKey}
-                          />
-                        );
-                      }
-                    )}
-                  </tbody>
-                </table>
-              </div>
-            ) : null}
-          </div>
+          <MenuCategory
+            key={key}
+            title={element.title}
+            items={element.items}
+            theme={restaurantDetails.menu.theme}
+          />
         ) : (
           <div key={key}></div>
         );

@@ -1,22 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import Popup from "reactjs-popup";
 import styles from "./MenuSectionModal.module.scss";
 export default (props) => {
-
+  // TODO: Make the initial value to point first section
+  // const [currentSection, setCurrentSection] = useState('')
   const scrollHandler = (category) => {
-    let el = document.getElementById(category.trim().toLowerCase().split(" ").join("-"))  
-    if(el) el.scrollIntoView({
-      behavior: 'smooth',
-      block: 'center',
-      inline: 'center'
-  })
-  }
+    let el = document.getElementById(
+      category.trim().toLowerCase().split(" ").join("-")
+    );
+    if (el)
+      el.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+        inline: "center",
+      });
+  };
 
   let content = props.categories.map(({ category, count }, index) => (
-    <a onClick = {() => scrollHandler(category)}>
+    <a onClick={() => scrollHandler(category)}>
       <div key={index}>
+        <div className={styles.dot}></div>
         <span>{category}</span>
-        <span>{count}</span>
+        <span style={{ textAlign: "right" }}>{count}</span>
       </div>
     </a>
   ));
