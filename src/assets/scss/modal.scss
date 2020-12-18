@@ -1,7 +1,7 @@
 // This file consists of overwrite rules for react-popup module
 .popup-content {
-  border-radius: 15px;
-  width: 80%;
+  border-radius: 12px;
+  width: 75%;
   max-width: 400px;
 }
 
@@ -10,4 +10,7 @@
   bottom: 60px;
   left: 50%;
   transform: translate(-50%, 0);
+}
+.popup-overlay {
+  background: rgba(0, 0, 0, 0.75);
 }

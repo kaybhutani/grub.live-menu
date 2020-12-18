@@ -43,7 +43,9 @@
   src: local('Mayan'), url('../fonts/mayan_2/Mayan.ttf') format('truetype');
 }
 
-
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: Lato;
   padding: 0;

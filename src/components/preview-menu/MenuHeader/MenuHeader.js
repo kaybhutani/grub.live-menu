@@ -3,14 +3,51 @@ import styles from "./MenuHeader.module.scss";
 import SocialIcon from "./SocialIcons";
 import SearchIcon from "../../../assets/images/searchIcon.svg";
 const MenuHeader = (props) => {
-  const restaurantDetails = props.restaurantDetails
+  const [restaurantDetails, setRestaurantDetails] = useState(props.restaurantDetails)
   let [searchQuery, setSearchQuery] = useState("");
+  
   const filterQuery = () => {
-    console.log('search called')
+    console.log(`search called: ${searchQuery}`)
+    if (searchQuery === "") setRestaurantDetails(props.restaurantDetails);
+    else {
+      // changing state obj to json
+      const tempRestaurantDetails = JSON.parse(
+        JSON.stringify(props.restaurantDetails)
+      );
+
+      const categories = [];
+
+      tempRestaurantDetails.menu.categories.forEach((category) => {
+        if (
+          category.title
+            .toLowerCase()
+            .includes(searchQuery.toLowerCase().trim())
+        ) {
+          categories.push(category);
+        } else {
+          const tempItems = [];
+          for (let i = 0; i < category.items.length; i++) {
+            if (
+              category.items[i].itemName
+                .toLowerCase()
+                .includes(searchQuery.toLowerCase().trim())
+            )
+              tempItems.push(category.items[i]);
+          }
+          category.items = tempItems;
+          if (tempItems.length > 0) {
+            categories.push(category);
+          }
+        }
+      });
+      tempRestaurantDetails.menu.categories = categories;
+      setRestaurantDetails(tempRestaurantDetails);
+    }
   }
+
   useEffect(() => {
     filterQuery(searchQuery);
-  }, [searchQuery, filterQuery]);
+  }, [searchQuery]);
   
   let socialIcons = []
   if(restaurantDetails.social) {
