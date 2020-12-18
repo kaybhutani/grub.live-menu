@@ -10,20 +10,22 @@ const PreviewMenuWrapper = (props) => {
   );
   const customizedMenu = props.customizedMenu;
   return (
-    <div className="container">
+    <div>
       <MenuHeader restaurantDetails={restaurantDetails} />
-      <MenuSectionModal
-        categories={restaurantDetails.menu.categories.map((item) => {
-          return {
-            category: item.title || " ",
-            count: item.items.length,
-          };
-        })}
-      />
-      <MenuWrapper
-        restaurantDetails={restaurantDetails}
-        customizedMenu={customizedMenu}
-      />
+      <div className="container">
+        <MenuWrapper
+          restaurantDetails={restaurantDetails}
+          customizedMenu={customizedMenu}
+        />
+        <MenuSectionModal
+          categories={restaurantDetails.menu.categories.map((item) => {
+            return {
+              category: item.title || " ",
+              count: item.items.length,
+            };
+          })}
+        />
+      </div>
     </div>
   );
 };

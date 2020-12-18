@@ -4,12 +4,14 @@
   flex-direction: column;
   color: #b9b9b9;
   font-weight: 600;
+  margin: 8px;
 }
 
 .imgWrapper {
   text-align: center;
+  margin-bottom: 8px;
   img {
-    max-width: 70px;
+    max-height: 64px;
   }
 }
 .firstRow {
