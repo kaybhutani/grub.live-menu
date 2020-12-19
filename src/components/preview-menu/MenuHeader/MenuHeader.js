@@ -3,19 +3,17 @@ import styles from "./MenuHeader.module.scss";
 import SocialIcon from "./SocialIcons";
 import SearchIcon from "../../../assets/images/searchIcon.svg";
 const MenuHeader = (props) => {
-  const [restaurantDetails, setRestaurantDetails] = useState(
-    props.restaurantDetails
-  );
+  const restaurantDetails = props.restaurantDetails
   let [searchQuery, setSearchQuery] = useState("");
 
   const filterQuery = () => {
     console.log(`search called: ${searchQuery}`);
-    if (searchQuery === "") setRestaurantDetails(props.restaurantDetails);
+    if (searchQuery === "") {
+      props.setRestaurantDetails(props.constRestaurantDetails);
+    }
     else {
       // changing state obj to json
-      const tempRestaurantDetails = JSON.parse(
-        JSON.stringify(props.restaurantDetails)
-      );
+      const tempRestaurantDetails = props.constRestaurantDetails
 
       const categories = [];
 
@@ -43,7 +41,8 @@ const MenuHeader = (props) => {
         }
       });
       tempRestaurantDetails.menu.categories = categories;
-      setRestaurantDetails(tempRestaurantDetails);
+      console.log(tempRestaurantDetails)
+      props.setRestaurantDetails(tempRestaurantDetails);
     }
   };
 

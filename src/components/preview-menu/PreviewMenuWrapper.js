@@ -4,15 +4,26 @@ import React, { useState } from "react";
 import MenuWrapper from "./MenuWrapper";
 import MenuHeader from "./MenuHeader/MenuHeader";
 import BottomBarWrapper from "./BottomBarWrapper/BottomBarWrapper";
-const PreviewMenuWrapper = ({ restaurantDetails, customizedMenu }) => {
+const PreviewMenuWrapper = (props) => {
+  const customizedMenu = props.customizedMenu
+  const constRestaurantDetails = JSON.parse(JSON.stringify(props.restaurantDetails))
+  const [restaurantDetails, setRestaurantDetails] = useState(props.restaurantDetails)
+  const getFirstCategory = () => {
+    if(restaurantDetails.menu.categories[0]) return restaurantDetails.menu.categories[0].title
+    else return ""
+  }
   const [currentSection, setCurrentSection] = useState(
-    restaurantDetails.menu.categories[0].title
+    getFirstCategory()
   );
 
   return (
     <>
-      <MenuHeader restaurantDetails={restaurantDetails} />
-      <div className="container" style={{ marginTop: 190 }}>
+      <MenuHeader 
+        restaurantDetails={restaurantDetails}
+        setRestaurantDetails={setRestaurantDetails}
+        constRestaurantDetails={constRestaurantDetails}
+      />
+      <div className="container" style={{ marginTop: 190, minHeight: '400px' }}>
         <MenuWrapper
           setCurrentSection={setCurrentSection}
           restaurantDetails={restaurantDetails}
