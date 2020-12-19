@@ -23,7 +23,7 @@ const PreviewMenuWrapper = (props) => {
         setRestaurantDetails={setRestaurantDetails}
         constRestaurantDetails={constRestaurantDetails}
       />
-      <div className="container" style={{ marginTop: 190, minHeight: '400px' }}>
+      <div className="container" style={{ marginTop: 160, minHeight: '400px' }}>
         <MenuWrapper
           setCurrentSection={setCurrentSection}
           restaurantDetails={restaurantDetails}

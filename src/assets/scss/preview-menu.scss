@@ -12,9 +12,25 @@ p {
   }
 }
 
+.menu-category {
+  font-size: 18px;
+  margin-left: 2px;
+  width: 100%;
+  background-color: $dark-gray;
+  color: $yellow-base;
+  margin: 0 -16px;
+  margin-bottom: 12px;
+  right: 0; 
+  padding: 6px 16px 6px 16px;
+  
+}
+
 .menu-items {
   margin-bottom: $xxl;
   .menu-item {
+    .item-name {
+      
+    }
     .item-description {
       opacity: 0.8;
       font-size: 0.8em;

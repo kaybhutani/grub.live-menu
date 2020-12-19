@@ -25,8 +25,8 @@ const MenuCategory = ({ title, items, theme, setCurrentSection }) => {
 
   return (
     <div ref={categoryRef}>
-      <h3 id={title.trim().toLowerCase().split(" ").join("-")}>{title}</h3>
-      <hr></hr>
+      <h3 className='menu-category' id={title.trim().toLowerCase().split(" ").join("-")}>{title}</h3>
+      {/*<hr></hr> */}
       {items.length > 0 ? (
         <div className="menu-items">
           <table className="category-table">
