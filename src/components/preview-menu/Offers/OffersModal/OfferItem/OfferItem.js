@@ -3,7 +3,12 @@ import styles from "./OfferItem.module.scss";
 const OfferItem = ({ offAmount, content }) => {
   return (
     <div className={styles.OfferItem}>
-      <h5>{offAmount}% OFF </h5>
+      {
+        offAmount?
+          <h5>{offAmount}% OFF </h5>
+        :
+          <></>
+      }
       <p>{content}</p>
       <hr />
     </div>

@@ -23,7 +23,7 @@ const Offers = ({ offers }) => {
               })}
             </marquee>
           </div>
-          <OffersModal />
+          <OffersModal  offers={offers}/>
         </div>
       ) : (
         <></>
