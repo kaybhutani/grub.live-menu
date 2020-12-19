@@ -10,7 +10,7 @@ const MenuCategory = ({ title, items, theme, setCurrentSection }) => {
   useEffect(() => {
     const checker = (e) => {
       let bounding = categoryRef.current.getBoundingClientRect();
-      if (bounding.y > 0 && bounding.y <= window.innerHeight - 400) {
+      if (bounding.y > 0 && bounding.y <= window.innerHeight/2) {
         console.log(`${title}  is in viewport!`);
 
         setCurrentSection(title);
@@ -20,7 +20,7 @@ const MenuCategory = ({ title, items, theme, setCurrentSection }) => {
     return () => {
       window.removeEventListener("scroll", checker);
     };
-  }, []);
+  }, [categoryRef, setCurrentSection, title]);
 
   return (
     <div ref={categoryRef}>

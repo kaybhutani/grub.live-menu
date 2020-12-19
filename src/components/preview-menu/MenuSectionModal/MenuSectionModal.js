@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Popup from "reactjs-popup";
 import styles from "./MenuSectionModal.module.scss";
 export default (props) => {
@@ -6,21 +6,22 @@ export default (props) => {
     let el = document.getElementById(
       category.trim().toLowerCase().split(" ").join("-")
     );
-    if (el)
+    if (el) {
       el.scrollIntoView({
         behavior: "smooth",
         block: "center",
         inline: "center",
-      });
+      })
+    }
   };
 
   let content = props.categories.map(({ category, count }, index) => {
     let isActive =
-      props.currentSection.trim().toLowerCase().split(" ").join("-") ==
+      props.currentSection.trim().toLowerCase().split(" ").join("-") ===
       category.trim().toLowerCase().split(" ").join("-");
     return (
       <a onClick={() => scrollHandler(category)}>
-        <div style={isActive ? { fontWeight: "bold" } : {}} key={index}>
+        <div style={isActive ? { fontWeight: "bold", color: '#000000' } : {}} key={index}>
           {isActive ? <div className={styles.dot}></div> : <div />}
           <span>{category}</span>
           <span style={{ textAlign: "right" }}>{count}</span>
