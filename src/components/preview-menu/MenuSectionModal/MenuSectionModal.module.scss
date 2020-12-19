@@ -2,9 +2,19 @@
   border-radius: 0px;
   background-color: white;
   padding: 10px 20px;
-  max-height: 250px;
   overflow-y: scroll;
+  animation: expandUp 0.5s forwards;
 }
+
+@keyframes expandUp {
+  from {
+    max-height: 0px;
+  }
+  to {
+    max-height: 250px;
+  }
+}
+
 .body {
   display: grid;
   grid-template-columns: auto;
@@ -34,6 +44,7 @@
   font-weight: 700;
   outline: none;
   margin: 16px auto;
+  box-shadow: 2px 2px 10px grey;
   cursor: pointer;
 }
 

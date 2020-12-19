@@ -11,7 +11,7 @@ export default (props) => {
         behavior: "smooth",
         block: "center",
         inline: "center",
-      })
+      });
     }
   };
 
@@ -20,8 +20,8 @@ export default (props) => {
       props.currentSection.trim().toLowerCase().split(" ").join("-") ===
       category.trim().toLowerCase().split(" ").join("-");
     return (
-      <a onClick={() => scrollHandler(category)}>
-        <div style={isActive ? { fontWeight: "bold", color: '#000000' } : {}} key={index}>
+      <a onClick={() => scrollHandler(category)} key={index}>
+        <div style={isActive ? { fontWeight: "bold", color: "#000000" } : {}}>
           {isActive ? <div className={styles.dot}></div> : <div />}
           <span>{category}</span>
           <span style={{ textAlign: "right" }}>{count}</span>

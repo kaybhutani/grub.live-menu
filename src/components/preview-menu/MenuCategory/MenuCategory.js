@@ -9,8 +9,11 @@ const MenuCategory = ({ title, items, theme, setCurrentSection }) => {
 
   useEffect(() => {
     const checker = (e) => {
+      if (!categoryRef || !categoryRef.current) {
+        return;
+      }
       let bounding = categoryRef.current.getBoundingClientRect();
-      if (bounding.y > 0 && bounding.y <= window.innerHeight/2) {
+      if (bounding.y > 0 && bounding.y <= window.innerHeight / 2) {
         setCurrentSection(title);
       }
     };
@@ -35,4 +38,4 @@ const MenuCategory = ({ title, items, theme, setCurrentSection }) => {
   );
 };
 
-export default React.memo(MenuCategory);
+export default MenuCategory;

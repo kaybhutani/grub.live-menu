@@ -3,16 +3,12 @@
 import React, { useState } from "react";
 import MenuWrapper from "./MenuWrapper";
 import MenuHeader from "./MenuHeader/MenuHeader";
-import BottomBarWrapper from './BottomBarWrapper/BottomBarWrapper'
-const PreviewMenuWrapper = (props) => {
-  const [restaurantDetails, setRestaurantDetails] = useState(
-    props.restaurantDetails
-  );
+import BottomBarWrapper from "./BottomBarWrapper/BottomBarWrapper";
+const PreviewMenuWrapper = ({ restaurantDetails, customizedMenu }) => {
   const [currentSection, setCurrentSection] = useState(
     restaurantDetails.menu.categories[0].title
   );
 
-  const customizedMenu = props.customizedMenu;
   return (
     <>
       <MenuHeader restaurantDetails={restaurantDetails} />
@@ -23,7 +19,10 @@ const PreviewMenuWrapper = (props) => {
           customizedMenu={customizedMenu}
         />
       </div>
-      <BottomBarWrapper currentSection={currentSection} restaurantDetails={restaurantDetails}/>
+      <BottomBarWrapper
+        currentSection={currentSection}
+        restaurantDetails={restaurantDetails}
+      />
     </>
   );
 };
