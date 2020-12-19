@@ -1,16 +1,44 @@
 // This file consists of overwrite rules for react-popup module
+
 .popup-content {
   border-radius: 12px;
   width: 75%;
   max-width: 400px;
 }
 
-#popup-2 {
+.modal {
+  border-radius: 0px;
+  background-color: white;
+  padding: 10px 20px;
+  overflow-y: scroll;
+  animation: expandUp 0.5s forwards;
+}
+
+@keyframes expandUp {
+  from {
+    max-height: 0px;
+  }
+  to {
+    max-height: 250px;
+  }
+}
+
+#popup-2,
+#popup-4 {
   position: fixed !important;
   bottom: 60px;
   left: 50%;
   transform: translate(-50%, 0);
 }
+
+#popup-4 {
+  background-color: #161616;
+  border: 0;
+  .modal {
+    background-color: #161616;
+  }
+}
+
 .popup-overlay {
   background: rgba(0, 0, 0, 0.75);
 }

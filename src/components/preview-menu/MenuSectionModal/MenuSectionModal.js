@@ -36,7 +36,7 @@ export default (props) => {
       nested
     >
       {(close) => (
-        <div className={styles.modal}>
+        <div className="modal">
           <div className={styles.body}>{content}</div>
         </div>
       )}
