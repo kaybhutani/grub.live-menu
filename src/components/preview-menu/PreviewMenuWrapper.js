@@ -39,7 +39,7 @@ const PreviewMenuWrapper = (props) => {
           })}
         />
       </div>
-      <Offers offers={["offer1"]} />
+      <Offers offers={restaurantDetails.offers} />
     </currentSectionContext.Provider>
   );
 };
