@@ -1,25 +1,19 @@
 import React, { useEffect } from "react";
 import MenuItem from "../MenuItem";
-import currentSectionContext from "../../../context/currentMenuSection";
-const MenuCategory = ({ title, items, theme }) => {
+const MenuCategory = ({ title, items, theme, setCurrentSection }) => {
   let categoryRef = React.createRef();
 
   let content = items.map((item, itemKey) => {
     return <MenuItem {...item} theme={theme} key={itemKey} />;
   });
-  let context = React.useContext(currentSectionContext);
 
   useEffect(() => {
-    const checker = async (e) => {
+    const checker = (e) => {
       let bounding = categoryRef.current.getBoundingClientRect();
-      if (bounding.y > 0 && bounding.y <= window.innerHeight) {
+      if (bounding.y > 0 && bounding.y <= window.innerHeight - 400) {
         console.log(`${title}  is in viewport!`);
-        /**
-         * ! updating currentSection throws error of currentRef.current being null, maybe cause of lifecycle, will look over it.
-         * @lakshya
-         * ? please look into it!
-         */
-        // context.updateCurrentSection(title);
+
+        setCurrentSection(title);
       }
     };
     window.addEventListener("scroll", checker);
@@ -43,4 +37,4 @@ const MenuCategory = ({ title, items, theme }) => {
   );
 };
 
-export default MenuCategory;
+export default React.memo(MenuCategory);
