@@ -6,8 +6,9 @@ const Offers = ({offers}) => {
     <>
     {
       offers && offers.length >0?
-      (<div className={styles.offersWrapper}>
-        {offers.map((element, key) => {
+      (
+      <div className={styles.offersWrapper}>
+        {/* {offers.map((element, key) => {
             return (
               <div key={key}>
               <p>{element}</p>
@@ -15,9 +16,11 @@ const Offers = ({offers}) => {
               </ div>
             )
         })
-        }
+        } */}
+        <p>Offer 1 blah blah blah blahblah blahblah blah</p>
       
-      </div>):
+      </div>
+      ):
       <></>
     }
    </> 

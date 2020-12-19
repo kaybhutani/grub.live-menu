@@ -3,10 +3,7 @@
 import React, { useState } from "react";
 import MenuWrapper from "./MenuWrapper";
 import MenuHeader from "./MenuHeader/MenuHeader";
-import MenuSectionModal from "./MenuSectionModal/MenuSectionModal";
-import Offers from "./Offers/Offers";
-
-
+import BottomBarWrapper from './BottomBarWrapper/BottomBarWrapper'
 const PreviewMenuWrapper = (props) => {
   const [restaurantDetails, setRestaurantDetails] = useState(
     props.restaurantDetails
@@ -25,18 +22,8 @@ const PreviewMenuWrapper = (props) => {
           restaurantDetails={restaurantDetails}
           customizedMenu={customizedMenu}
         />
-
-        <MenuSectionModal
-          currentSection={currentSection}
-          categories={restaurantDetails.menu.categories.map((item) => {
-            return {
-              category: item.title || " ",
-              count: item.items.length,
-            };
-          })}
-        />
       </div>
-      {/* <Offers offers={restaurantDetails.offers} /> */}
+      <BottomBarWrapper currentSection={currentSection} restaurantDetails={restaurantDetails}/>
     </>
   );
 };
