@@ -41,4 +41,7 @@
 
 .popup-overlay {
   background: rgba(0, 0, 0, 0.75);
+  &:focus {
+    outline: none;
+  }
 }

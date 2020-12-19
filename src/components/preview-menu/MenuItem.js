@@ -8,7 +8,7 @@ const MenuItem = ({ itemName, itemDescription, itemPrice, customStyling , theme}
             <p className="item-name" 
             style = {
               {
-                WebkitTextStroke: `0.03em ${theme.color}`
+                WebkitTextStroke: `0.02em ${theme.color}`
               }
             }>{itemName}</p>
             {itemDescription ? (
@@ -19,7 +19,7 @@ const MenuItem = ({ itemName, itemDescription, itemPrice, customStyling , theme}
             <p className="item-price" 
               style = {
                 {
-                  WebkitTextStroke: `0.03em ${theme.color}`
+                  WebkitTextStroke: `0.02em ${theme.color}`
                 }
               }
             >{itemPrice}</p>
