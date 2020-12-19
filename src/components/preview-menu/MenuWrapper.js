@@ -1,9 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import MenuCategory from "./MenuCategory/MenuCategory";
-import MenuItem from "./MenuItem";
 const MenuWrapper = (props) => {
   const restaurantDetails = props.restaurantDetails;
-  const customizedMenu = props.customizedMenu;
 
   return (
     <div>
@@ -11,6 +9,7 @@ const MenuWrapper = (props) => {
         return element.title !== "" ? (
           <MenuCategory
             key={key}
+            setCurrentSection={props.setCurrentSection}
             title={element.title}
             items={element.items}
             theme={restaurantDetails.menu.theme}
@@ -23,4 +22,4 @@ const MenuWrapper = (props) => {
   );
 };
 
-export default MenuWrapper;
+export default React.memo(MenuWrapper);

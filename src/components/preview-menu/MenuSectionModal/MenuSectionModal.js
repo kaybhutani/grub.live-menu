@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import Popup from "reactjs-popup";
 import styles from "./MenuSectionModal.module.scss";
 export default (props) => {
-  // TODO: Make the initial value to point first section
-  // const [currentSection, setCurrentSection] = useState('')
   const scrollHandler = (category) => {
     let el = document.getElementById(
       category.trim().toLowerCase().split(" ").join("-")
@@ -16,15 +14,20 @@ export default (props) => {
       });
   };
 
-  let content = props.categories.map(({ category, count }, index) => (
-    <a onClick={() => scrollHandler(category)}>
-      <div key={index}>
-        <div className={styles.dot}></div>
-        <span>{category}</span>
-        <span style={{ textAlign: "right" }}>{count}</span>
-      </div>
-    </a>
-  ));
+  let content = props.categories.map(({ category, count }, index) => {
+    let isActive =
+      props.currentSection.trim().toLowerCase().split(" ").join("-") ==
+      category.trim().toLowerCase().split(" ").join("-");
+    return (
+      <a onClick={() => scrollHandler(category)}>
+        <div style={isActive ? { fontWeight: "bold" } : {}} key={index}>
+          {isActive ? <div className={styles.dot}></div> : <div />}
+          <span>{category}</span>
+          <span style={{ textAlign: "right" }}>{count}</span>
+        </div>
+      </a>
+    );
+  });
   return (
     <Popup
       trigger={<button className={styles.button}>BROWSE MENU</button>}

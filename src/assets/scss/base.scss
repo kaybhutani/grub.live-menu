@@ -1,51 +1,62 @@
 @font-face {
-  font-family: 'Lato';
-  src: local('Lato'), url('../fonts/Lato/Lato-Regular.ttf') format('truetype');
+  font-family: "Lato";
+  src: local("Lato"), url("../fonts/Lato/Lato-Regular.ttf") format("truetype");
 }
 @font-face {
-  font-family: 'Almada';
-  src: local('Almada'), url('../fonts/almada/Almada.ttf') format('truetype');
+  font-family: "Lato";
+  src: local("Lato"), url("../fonts/Lato/Lato-Bold.ttf") format("truetype");
+  font-weight: bold;
 }
 @font-face {
-  font-family: 'YelloSun';
-  src: local('YelloSun'), url('../fonts/yellosun/yellosun.ttf') format('truetype');
+  font-family: "Almada";
+  src: local("Almada"), url("../fonts/almada/Almada.ttf") format("truetype");
 }
 @font-face {
-  font-family: 'Vogue';
-  src: local('Vogue'), url('../fonts/vogue/Vogue.ttf') format('truetype');
+  font-family: "YelloSun";
+  src: local("YelloSun"),
+    url("../fonts/yellosun/yellosun.ttf") format("truetype");
 }
 @font-face {
-  font-family: 'Florence';
-  src: local('Florence'), url('../fonts/florence/Florence-Regular.ttf') format('truetype');
+  font-family: "Vogue";
+  src: local("Vogue"), url("../fonts/vogue/Vogue.ttf") format("truetype");
 }
 @font-face {
-  font-family: 'TheWanters';
-  src: local('TheWanters'), url('../fonts/the_wanters/TheWanters.ttf') format('truetype');
+  font-family: "Florence";
+  src: local("Florence"),
+    url("../fonts/florence/Florence-Regular.ttf") format("truetype");
 }
 @font-face {
-  font-family: 'Vintages';
-  src: local('Vintages'), url('../fonts/vintages/Vintages.ttf') format('truetype');
+  font-family: "TheWanters";
+  src: local("TheWanters"),
+    url("../fonts/the_wanters/TheWanters.ttf") format("truetype");
 }
 @font-face {
-  font-family: 'Goldstick';
-  src: local('Goldstick'), url('../fonts/goldstick/GOLDSTICK.ttf') format('truetype');
+  font-family: "Vintages";
+  src: local("Vintages"),
+    url("../fonts/vintages/Vintages.ttf") format("truetype");
 }
 @font-face {
-  font-family: 'Typewriter';
-  src: local('Typewriter'), url('../fonts/jmh_typewriter/JMH\ Typewriter-Thin.ttf') format('truetype');
+  font-family: "Goldstick";
+  src: local("Goldstick"),
+    url("../fonts/goldstick/GOLDSTICK.ttf") format("truetype");
 }
 @font-face {
-  font-family: 'TypewriterBold';
-  src: local('TypewriterBold'), url('../fonts/jmh_typewriter/JMH\ Typewriter-Bold.ttf') format('truetype');
+  font-family: "Typewriter";
+  src: local("Typewriter"),
+    url("../fonts/jmh_typewriter/JMH\ Typewriter-Thin.ttf") format("truetype");
 }
 @font-face {
-  font-family: 'Mayan';
-  src: local('Mayan'), url('../fonts/mayan_2/Mayan.ttf') format('truetype');
+  font-family: "TypewriterBold";
+  src: local("TypewriterBold"),
+    url("../fonts/jmh_typewriter/JMH\ Typewriter-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Mayan";
+  src: local("Mayan"), url("../fonts/mayan_2/Mayan.ttf") format("truetype");
 }
 
 html {
   scroll-behavior: smooth;
-  
 }
 body {
   font-family: Lato;
@@ -58,26 +69,20 @@ body {
   width: 6em;
 }
 
-
 nav {
-
   background-color: $yellow-base;
   padding: $s $m;
   .nav-item {
     text-align: center;
     vertical-align: middle;
-    
   }
-  
 }
 
 .form-input {
-  
   border-radius: $xs;
   border: 1px solid $light-gray;
   padding: $s;
   width: 80%;
-
 }
 
 .center-align {
@@ -106,9 +111,8 @@ footer {
   margin: $m;
 }
 
-
 @media only screen and (max-width: 400px) {
-  .logo { 
+  .logo {
     width: 4em;
   }
   .nav-item {
