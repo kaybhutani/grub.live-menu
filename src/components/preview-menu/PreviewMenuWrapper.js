@@ -16,7 +16,7 @@ const PreviewMenuWrapper = (props) => {
   return (
     <>
       <MenuHeader restaurantDetails={restaurantDetails} />
-      <div className="container">
+      <div className="container" style={{ marginTop: 190 }}>
         <MenuWrapper
           setCurrentSection={setCurrentSection}
           restaurantDetails={restaurantDetails}
