@@ -5,6 +5,8 @@ import MenuWrapper from "./MenuWrapper";
 import MenuHeader from "./MenuHeader/MenuHeader";
 import MenuSectionModal from "./MenuSectionModal/MenuSectionModal";
 import Offers from "./Offers/Offers";
+
+
 const PreviewMenuWrapper = (props) => {
   const [restaurantDetails, setRestaurantDetails] = useState(
     props.restaurantDetails
@@ -34,7 +36,7 @@ const PreviewMenuWrapper = (props) => {
           })}
         />
       </div>
-      <Offers offers={["offer1"]} />
+      {/* <Offers offers={restaurantDetails.offers} /> */}
     </>
   );
 };
