@@ -90,7 +90,7 @@ nav {
 }
 
 footer {
-  margin-top: $l;
+  margin-top: 0;
   padding: $m $m;
   background-color: $dark-gray;
   color: $yellow-base;
@@ -108,7 +108,7 @@ footer {
 }
 
 .container {
-  margin: $m;
+  padding: $m;
 }
 
 @media only screen and (max-width: 400px) {

@@ -63,7 +63,11 @@ const MenuHeader = (props) => {
     }
   }
   return (
-    <div className={styles.MenuHeader}>
+    <div className={styles.MenuHeader} style={
+      restaurantDetails.customizedMenu?{
+        ...restaurantDetails.menu.theme
+      }:{}
+    }>
       <div style={{ padding: 8 }}>
         <div className={styles.imgWrapper}>
           <img src={restaurantDetails.logo} alt="Logo" />

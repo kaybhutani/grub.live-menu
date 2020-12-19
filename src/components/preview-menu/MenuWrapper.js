@@ -4,7 +4,11 @@ const MenuWrapper = (props) => {
   const restaurantDetails = props.restaurantDetails;
 
   return (
-    <div>
+    <div className="menu-wrapper" style = {
+      restaurantDetails.customizedMenu? {
+        ...restaurantDetails.menu.theme
+      }: {}
+    }>
       {restaurantDetails.menu.categories.map((element, key) => {
         return element.title !== "" ? (
           <MenuCategory

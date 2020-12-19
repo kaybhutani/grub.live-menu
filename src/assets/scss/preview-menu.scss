@@ -25,6 +25,12 @@ p {
   
 }
 
+.menu-wrapper {
+  padding: 0 16px;
+  padding-top: 160px;
+  min-height: 700px;
+}
+
 .menu-items {
   margin-bottom: $xxl;
   .menu-item {
