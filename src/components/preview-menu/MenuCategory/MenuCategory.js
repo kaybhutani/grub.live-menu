@@ -11,8 +11,6 @@ const MenuCategory = ({ title, items, theme, setCurrentSection }) => {
     const checker = (e) => {
       let bounding = categoryRef.current.getBoundingClientRect();
       if (bounding.y > 0 && bounding.y <= window.innerHeight/2) {
-        console.log(`${title}  is in viewport!`);
-
         setCurrentSection(title);
       }
     };
