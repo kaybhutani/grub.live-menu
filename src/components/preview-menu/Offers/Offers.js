@@ -12,7 +12,7 @@ const Offers = ({ offers }) => {
               <span className={`eos-icons ${styles.starIcon}`}> star </span>
               {offers.map((element, key) => {
                 return (
-                  <i>
+                  <i key={key}>
                     {element}{" "}
                     <span className={`eos-icons ${styles.starIcon}`}>
                       {" "}
@@ -23,7 +23,7 @@ const Offers = ({ offers }) => {
               })}
             </marquee>
           </div>
-          <OffersModal  offers={offers}/>
+          <OffersModal offers={offers} />
         </div>
       ) : (
         <></>

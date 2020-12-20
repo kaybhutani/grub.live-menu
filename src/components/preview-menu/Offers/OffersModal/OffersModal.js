@@ -3,9 +3,10 @@ import Popup from "reactjs-popup";
 import OfferItem from "./OfferItem/OfferItem";
 import styles from "./OffersModal.module.scss";
 
-
 const OffersModal = ({ offers }) => {
-  let offersList = offers.map((offer) => <OfferItem content={offer} />);
+  let offersList = offers.map((offer, index) => (
+    <OfferItem key={index} content={offer} />
+  ));
   return (
     <Popup
       modal
