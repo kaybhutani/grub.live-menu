@@ -79,23 +79,21 @@ const PreviewRestaurantMenu = (props) => {
       }
     >
       <div style={{ textAlign: "center" }}>
-      {restaurantDetails.logo ? (
-            <img
-              src={restaurantDetails.logo}
-              alt=""
-              className="restaurant-logo"
-            ></img>
-          ) : (
-            <i
-              className="eos-icons"
-              style={{ color: "red", fontSize: "1em", margin: "8px" }}
-            >
-              local_dining
-            </i>
-          )}
-        <h1>
-          {restaurantDetails.restaurantName}
-        </h1>
+        {restaurantDetails.logo ? (
+          <img
+            src={restaurantDetails.logo}
+            alt=""
+            className="restaurant-logo"
+          ></img>
+        ) : (
+          <i
+            className="eos-icons"
+            style={{ color: "red", fontSize: "1em", margin: "8px" }}
+          >
+            local_dining
+          </i>
+        )}
+        <h1>{restaurantDetails.restaurantName}</h1>
         {customizedMenu ? <h4>{restaurantDetails.bio}</h4> : <></>}
       </div>
       <br></br>
@@ -117,7 +115,13 @@ const PreviewRestaurantMenu = (props) => {
             <div key={key}>
               <br></br>
               <h2>{element.title}</h2>
-              <hr style={customizedMenu ? { borderColor: theme.color, opacity: '0.8' } : {}} />
+              <hr
+                style={
+                  customizedMenu
+                    ? { borderColor: theme.color, opacity: "0.8" }
+                    : {}
+                }
+              />
               <br></br>
               {element.items.length > 0 ? (
                 <div>

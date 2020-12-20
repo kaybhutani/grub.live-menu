@@ -1,0 +1,36 @@
+.offersWrapper {
+  background-color: rgb(22, 22, 22);
+  color:  #e8aa00;
+  text-align: center;
+  padding: 8px 6px 2px 4px;
+  width: 100%;
+
+  .offersMarque {
+    display: inline-block;
+    width: 75%;
+    left: 0;
+    padding: 0;
+    margin: 0;
+  }
+
+
+  .starIcon {
+    margin: 0px 6px 0px 8px;
+    margin-top: -10px;
+    vertical-align: middle;
+    height: 0.8em;
+  }
+}
+
+.seeAllBtn {
+  display: inline-block;
+  margin: 0px 8px 0px 12px;
+  padding-bottom: 6px;
+  vertical-align: middle;
+  text-decoration: underline;
+  text-underline-position: under;
+  i {
+    text-align: center;
+    vertical-align: middle;
+  }
+}
