@@ -1,14 +1,15 @@
 import React, { useEffect } from 'react'
-
+import Navigation from './Navigation'
 const Home = () => {
-  useEffect(()=> {
-    setTimeout(() => window.location = 'https://grub.live', 2000)
-  })
+  
   return (
-    <div className='container' style={{textAlign: "center"}}>
-      <h2>Looks like you scanned a wrong QR, redirecting you to <a href='www.grub.live'>www.grub.live</a></h2>
+    <>
+    <Navigation />
+    <div className='container' style={{textAlign: "center", minHeight: 600}}>
+      <h2>Looks like you scanned a wrong QR, visit <a href='https://grub.live' target='_blank'>www.grub.live</a> to know more about us.</h2>
       
     </div>
+    </>
   )
 }
 
