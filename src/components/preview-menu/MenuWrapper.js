@@ -5,7 +5,7 @@ const MenuWrapper = (props) => {
 
   return (
     <div className="menu-wrapper" style = {
-      restaurantDetails.customizedMenu? {
+      restaurantDetails.menu.theme? {
         ...restaurantDetails.menu.theme
       }: {}
     }>

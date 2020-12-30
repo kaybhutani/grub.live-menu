@@ -5,7 +5,6 @@ import MenuWrapper from "./MenuWrapper";
 import MenuHeader from "./MenuHeader/MenuHeader";
 import BottomBarWrapper from "./BottomBarWrapper/BottomBarWrapper";
 const PreviewMenuWrapper = (props) => {
-  const customizedMenu = props.customizedMenu
   const constRestaurantDetails = JSON.parse(JSON.stringify(props.restaurantDetails))
   const [restaurantDetails, setRestaurantDetails] = useState(props.restaurantDetails)
   const getFirstCategory = () => {
@@ -27,7 +26,6 @@ const PreviewMenuWrapper = (props) => {
         <MenuWrapper
           setCurrentSection={setCurrentSection}
           restaurantDetails={restaurantDetails}
-          customizedMenu={customizedMenu}
         />
       </div>
       <BottomBarWrapper

@@ -64,7 +64,7 @@ const MenuHeader = (props) => {
   }
   return (
     <div className={styles.MenuHeader} style={
-      restaurantDetails.customizedMenu?{
+      restaurantDetails.menu.theme?{
         ...restaurantDetails.menu.theme
       }:{}
     }>

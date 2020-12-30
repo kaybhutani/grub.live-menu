@@ -41,10 +41,8 @@ const PreviewMenu = (props) => {
                 />
               </Helmet>
               <div className="preview-menu">
-                {/* <PreviewRestaurantMenu restaurantDetails={restaurantDetails}  customizedMenu = {restaurantDetails.customizedMenu}/> */}
                 <PreviewMenuWrapper
                   restaurantDetails={restaurantDetails}
-                  customizedMenu={restaurantDetails.customizedMenu}
                 />
               </div>
             </>
