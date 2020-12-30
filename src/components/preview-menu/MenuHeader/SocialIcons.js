@@ -10,21 +10,21 @@ const SocialIcons = ({ platform, link }) => {
   switch (platform) {
     case "facebook":
       return (
-        <a href={link}>
+        <a target='_blank' rel="noopener noreferrer" href={link}>
           <img src={Facebook} alt="Facebook" />
         </a>
       );
 
     case "instagram":
       return (
-        <a href={link}>
+        <a target='_blank' rel="noopener noreferrer" href={link}>
           <img src={Instagram} alt="Instagram" />
         </a>
       );
 
     default:
       return (
-        <a href={link}>
+        <a target='_blank' rel="noopener noreferrer" href={link}>
           {/* <img href={WebIcon} alt="web" /> */}
           <i
             className="eos-icons"
