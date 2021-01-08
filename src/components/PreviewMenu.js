@@ -18,7 +18,10 @@ const PreviewMenu = (props) => {
         setDataFetched(true);
         console.log(data);
         if (data.success) {
-          setRestaurantDetails(data.data);
+          if(data.data.disabled && data.data.disabled == true)
+            console.log('Menu disabled')
+          else 
+            setRestaurantDetails(data.data);
         }
       });
   }, [menuId]);
