@@ -57,7 +57,7 @@ const PreviewMenu = (props) => {
               </p>
               <button
                 className="black-yellow"
-                onClick={() => (window.location.href = "/")}
+                onClick={() => (window.location.href = "https://www.the-qrcode-generator.com/scan")}
               >
                 Scan QR Code
               </button>
