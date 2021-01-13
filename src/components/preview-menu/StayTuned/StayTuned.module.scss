@@ -1,0 +1,69 @@
+.popupContainer {
+  position: fixed;
+  background-color: rgba($color: #000000, $alpha: 0.7);
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  top: 0;
+  opacity: 0;
+  animation: modalAnimation 0.2s ease-in 0s forwards;
+}
+
+@keyframes modalAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.popupDiv {
+  h2 {
+    padding: 16px 0px 0px 0px;
+    margin: 0px;
+  }
+  .head {
+    text-align: center;
+
+    margin: 4px 0px 24px 0px;
+    line-height: 1.4em;
+  }
+
+  background-color: white;
+  border-radius: 16px;
+  margin: 200px 8%;
+  max-width: 400px;
+  .formDiv {
+    padding: 16px 18px 0px 18px;
+  }
+}
+.formGroup {
+  margin-bottom: 12px;
+  .formIput {
+    margin: 4px 0px 8px 0px;
+    padding: 12px;
+    text-align: left;
+    border-radius: 4px;
+    border: 1px solid gray;
+    min-width: 100px;
+    width: 70%;
+  }
+  .formSelect {
+    margin: 4px 0px 8px 0px;
+    padding: 12px 4px;
+    border-radius: 4px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+}
+
+.saveButton {
+  width: 100%;
+  height: 42px;
+  margin-top: 24px;
+  background-color: rgb(0, 47, 255);
+  border: 0px;
+  color: white;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
