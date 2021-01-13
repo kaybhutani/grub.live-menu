@@ -46,6 +46,7 @@ const PreviewMenu = (props) => {
               <div className="preview-menu">
                 <PreviewMenuWrapper
                   restaurantDetails={restaurantDetails}
+                  menuId={menuId}
                 />
               </div>
             </>

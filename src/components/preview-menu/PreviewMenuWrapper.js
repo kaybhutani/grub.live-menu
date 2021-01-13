@@ -37,7 +37,12 @@ const PreviewMenuWrapper = (props) => {
         currentSection={currentSection}
         restaurantDetails={restaurantDetails}
       />
-      <StayTuned restaurantDetails={restaurantDetails} showStayTuned={showStayTuned} />
+      <StayTuned
+        restaurantDetails={restaurantDetails}
+        showStayTuned={showStayTuned}
+        setShowStayTuned={setShowStayTuned}
+        menuId={props.menuId}
+      />
     </>
   );
 };
