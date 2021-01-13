@@ -7,26 +7,40 @@
   top: 0;
 }
 .popupDiv {
-  h4 {
-    margin: 4px 0px 24px 0px;
+  h2 {
+    padding: 16px 0px 0px 0px;
+    margin: 0px;
   }
+  .head{
+    margin: 4px 0px 24px 0px;
+    line-height: 1.3em;
+  }
+  
   text-align: center;
   background-color: white;
   border-radius: 16px;
   margin: 200px 8%;
   .formDiv {
-    padding: 16px 24px 0px 24px;
+    padding: 16px 18px 0px 18px;
   }
 }
 .formGroup {
   margin-bottom: 12px;
   .formIput {
-    margin: 8px 0px;
+    margin: 4px 0px 8px 0px;
     padding: 12px;
     text-align: left;
     border-radius: 4px;
     border: 1px solid gray;
-    min-width: 200px;
+    min-width: 100px;
+    width: 70%;
+  }
+  .formSelect {
+    margin: 4px 0px 8px 0px;
+    padding: 12px 4px;
+    border-radius: 4px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
   }
 }
 
