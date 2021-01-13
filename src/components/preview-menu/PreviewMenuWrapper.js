@@ -21,7 +21,7 @@ const PreviewMenuWrapper = (props) => {
   const [currentSection, setCurrentSection] = useState(getFirstCategory());
 
   useEffect(() => {
-    setTimeout(() => setShowStayTuned(true), 2000);
+    setTimeout(() => setShowStayTuned(true), 8000);
   }, []);
   return (
     <>

@@ -33,7 +33,7 @@ const StayTuned = ({
             {/* <h2>Offers and more...</h2> */}
             <div className={styles.formDiv}>
               <p className={styles.head}>
-                Stay tuned for new offers from{" "}
+                Enter your details to Stay tuned for exciting <b>Offers, events</b> and more from{" "}
                 <i>
                   <b>{restaurantDetails.restaurantName}</b>
                 </i>{" "}
@@ -65,7 +65,7 @@ const StayTuned = ({
                     pattern="[0-9]{10}"
                     required
                     name="phoneNumber"
-                    placeholder="Eg:   9999999999"
+                    placeholder="Eg: 9876543210"
                   ></input>
                 </div>
               </div>
