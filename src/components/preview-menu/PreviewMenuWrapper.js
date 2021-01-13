@@ -8,7 +8,7 @@ import StayTuned from './StayTuned/StayTuned'
 const PreviewMenuWrapper = (props) => {
   const constRestaurantDetails = JSON.parse(JSON.stringify(props.restaurantDetails))
   const [restaurantDetails, setRestaurantDetails] = useState(props.restaurantDetails)
-  const [showStayTuned, setShowStayTuned] = useState(false)
+  const [showStayTuned, setShowStayTuned] = useState(true)
   const getFirstCategory = () => {
     if(restaurantDetails.menu.categories[0]) return restaurantDetails.menu.categories[0].title
     else return ""
