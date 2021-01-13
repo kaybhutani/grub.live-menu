@@ -5,21 +5,34 @@
   height: 100%;
   z-index: 100;
   top: 0;
+  opacity: 0;
+  animation: modalAnimation 0.6s ease-in 0s forwards;
+}
+
+@keyframes modalAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .popupDiv {
   h2 {
     padding: 16px 0px 0px 0px;
     margin: 0px;
   }
-  .head{
+  .head {
+    text-align: center;
+
     margin: 4px 0px 24px 0px;
-    line-height: 1.3em;
+    line-height: 1.4em;
   }
-  
-  text-align: center;
+
   background-color: white;
   border-radius: 16px;
   margin: 200px 8%;
+  max-width: 400px;
   .formDiv {
     padding: 16px 18px 0px 18px;
   }
@@ -43,7 +56,6 @@
     border-bottom-right-radius: 0px;
   }
 }
-
 
 .saveButton {
   width: 100%;
