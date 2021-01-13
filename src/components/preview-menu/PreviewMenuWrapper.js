@@ -1,12 +1,14 @@
 // import all components here
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import MenuWrapper from "./MenuWrapper";
 import MenuHeader from "./MenuHeader/MenuHeader";
 import BottomBarWrapper from "./BottomBarWrapper/BottomBarWrapper";
+import StayTuned from './StayTuned/StayTuned'
 const PreviewMenuWrapper = (props) => {
   const constRestaurantDetails = JSON.parse(JSON.stringify(props.restaurantDetails))
   const [restaurantDetails, setRestaurantDetails] = useState(props.restaurantDetails)
+  const [showStayTuned, setShowStayTuned] = useState(false)
   const getFirstCategory = () => {
     if(restaurantDetails.menu.categories[0]) return restaurantDetails.menu.categories[0].title
     else return ""
@@ -14,7 +16,10 @@ const PreviewMenuWrapper = (props) => {
   const [currentSection, setCurrentSection] = useState(
     getFirstCategory()
   );
-
+  
+  useEffect(()=> {
+    setTimeout(() => setShowStayTuned(true), 10000)
+  }, [])
   return (
     <>
       <MenuHeader 
@@ -32,6 +37,7 @@ const PreviewMenuWrapper = (props) => {
         currentSection={currentSection}
         restaurantDetails={restaurantDetails}
       />
+      <StayTuned restaurantDetails={restaurantDetails} showStayTuned={showStayTuned} />
     </>
   );
 };
