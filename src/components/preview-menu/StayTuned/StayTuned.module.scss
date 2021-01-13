@@ -1,5 +1,43 @@
-.popupDiv {
+.popupContainer {
   position: fixed;
-  margin: auto auto;
-  z-index: 1000;
+  background-color: rgba($color: #000000, $alpha: 0.6);
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  top: 0;
+}
+.popupDiv {
+  h4 {
+    margin: 4px 0px 24px 0px;
+  }
+  text-align: center;
+  background-color: white;
+  border-radius: 16px;
+  margin: 200px 8%;
+  .formDiv {
+    padding: 16px 24px 0px 24px;
+  }
+}
+.formGroup {
+  margin-bottom: 12px;
+  .formIput {
+    margin: 8px 0px;
+    padding: 12px;
+    text-align: left;
+    border-radius: 4px;
+    border: 1px solid gray;
+    min-width: 200px;
+  }
+}
+
+
+.saveButton {
+  width: 100%;
+  height: 42px;
+  margin-top: 24px;
+  background-color: rgb(0, 47, 255);
+  border: 0px;
+  color: white;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
 }

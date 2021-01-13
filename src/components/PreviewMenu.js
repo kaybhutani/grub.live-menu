@@ -18,7 +18,7 @@ const PreviewMenu = (props) => {
         setDataFetched(true);
         console.log(data);
         if (data.success) {
-          if(data.data.disabled && data.data.disabled == true)
+          if(data.data.disabled && data.data.disabled === true)
             console.log('Menu disabled')
           else 
             setRestaurantDetails(data.data);
@@ -30,7 +30,7 @@ const PreviewMenu = (props) => {
     <div>
       {dataFetched ? (
         <div>
-          {restaurantDetails != null ? (
+          {restaurantDetails !== null ? (
             <>
               <Helmet>
                 <title>{restaurantDetails.restaurantName} Menu</title>
