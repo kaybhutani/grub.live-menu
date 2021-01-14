@@ -16,7 +16,7 @@ const StayTuned = ({
   );
 
   const submitHandler = () => {
-    if (!/[0-9]{10}/.test(phoneNumber) || phoneNumber == "" || emailId == "") {
+    if (!/[0-9]{10}/.test(phoneNumber) || phoneNumber === "") {
       console.log(phoneNumber, emailId);
       message.info("Oopsie! Please write valid input!");
       return;

@@ -9,8 +9,8 @@
   z-index: 100;
   top: 0;
   opacity: 0;
-  animation: modalAnimation 0.5s ease-in 0s forwards;
-  -webkit-animation: modalAnimation 0.5s ease-in 0s forwards;
+  animation: modalAnimation 0.3s ease-in 0s forwards;
+  -webkit-animation: modalAnimation 0.3s ease-in 0s forwards;
 }
 
 @keyframes modalAnimation {
@@ -39,6 +39,9 @@
 
     margin: 4px 0px 24px 0px;
     line-height: 1.4em;
+    a {
+      color: black;
+    }
   }
 
   background-color: white;
