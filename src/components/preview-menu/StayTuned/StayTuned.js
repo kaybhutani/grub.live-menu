@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./StayTuned.module.scss";
 import { apiBaseUrl } from "../../../config.json";
-
+import { message } from "antd";
 const StayTuned = ({
   restaurantDetails,
   showStayTuned,
@@ -9,15 +9,23 @@ const StayTuned = ({
   menuId,
 }) => {
   const [phoneNumber, setPhoneNumber] = useState(
-    localStorage.getItem("userPhoneNumber")
+    localStorage.getItem("userPhoneNumber") || ""
   );
-  const [emailId, setEmailId] = useState(localStorage.getItem("userEmailId"));
+  const [emailId, setEmailId] = useState(
+    localStorage.getItem("userEmailId") || ""
+  );
 
   const submitHandler = () => {
-    setShowStayTuned(false);
+    if (!/[0-9]{10}/.test(phoneNumber) || phoneNumber === "") {
+      console.log(phoneNumber, emailId);
+      message.info("Oopsie! Please write valid input!");
+      return;
+    }
+
     localStorage.setItem("userPhoneNumber", phoneNumber);
     localStorage.setItem("userEmailId", emailId);
     localStorage.setItem(menuId, true);
+    setShowStayTuned(false);
     fetch(`${apiBaseUrl}/users/add/${menuId}`, {
       method: "post",
       headers: { "Content-Type": "application/json" },
@@ -29,11 +37,12 @@ const StayTuned = ({
     <>
       {showStayTuned && !localStorage.getItem(menuId) ? (
         <div className={styles.popupContainer}>
-          <div className={styles.popupDiv} modal>
+          <div className={styles.popupDiv} modal="true">
             {/* <h2>Offers and more...</h2> */}
             <div className={styles.formDiv}>
               <p className={styles.head}>
-                Enter your details to Stay tuned for exciting <b>Offers, events</b> and more from{" "}
+                Enter your details to Stay tuned for exciting{" "}
+                <b>Offers, events</b> and more from{" "}
                 <i>
                   <b>{restaurantDetails.restaurantName}</b>
                 </i>{" "}
@@ -53,13 +62,17 @@ const StayTuned = ({
                 <p>
                   Phone Number <span style={{ color: "red" }}>*</span>
                 </p>
-                <div>
-                  <select className={styles.formSelect} disabled={true}>
-                    <option selected={true}>+91</option>
+                <div className={styles.formInputGroup}>
+                  <select
+                    className={styles.formSelect}
+                    disabled={true}
+                    value="+91"
+                  >
+                    <option>+91</option>
                   </select>{" "}
                   <input
                     value={phoneNumber}
-                    onChange={(e) => setPhoneNumber(e.target.value)}
+                    onChange={(e) => setPhoneNumber(e.target.value.trim())}
                     className={styles.formIput}
                     type="tel"
                     pattern="[0-9]{10}"
